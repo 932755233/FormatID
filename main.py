@@ -11,24 +11,20 @@ def print_hi(name):
     print("Hi, {0}".format(name))  # Press ⌘F8 to toggle the breakpoint.
 
 
-# Press the green button in the gutter to run the script.
-# if __name__ == '__main__':
-#     print_hi('PyCharm')
-# try:
-#     with open('/Users/danny/Desktop/petshop/centre/src/main/res/layout/layout_purchase_request_detail.xml', 'r') as xml:
-#     print(xml)
-#     # for str in xml.readline()
-#     #     print str
-# finally:
-#     if xml:
-#         xml.close()
-temp = ''
-for line in fileinput.input(
-        '/Users/danny/Desktop/petshop/centre/src/main/res/layout/layout_purchase_request_detail.xml'):
+# Press the green button in the gutter to run the script. if __name__ == '__main__': print_hi('PyCharm') try: with
+# open('/Users/danny/Desktop/petshop/centre/src/main/res/layout/layout_purchase_request_detail.xml', 'r') as xml:
+# print(xml) # for str in xml.readline() #     print str finally: if xml: xml.close() path =
+# '/Users/danny/Desktop/petshop/centre/src/main/res/layout/layout_purchase_request_detail.xml'
+path = 'G:\\work\\petshop\\centre\\src\\main\\res\\layout\\layout_purchase_request_detail.xml'
+tempStr = ''
+# with open(path, 'rb') as lines:
+#     for line in lines.readline():
+#         print(line)
+for line in fileinput.input(path, openhook=fileinput.hook_encoded('utf-8')):
     if line.find('android:id="@+id/') >= 0:
         temp = line.split('/')[1][:-2]
-        print('@ViewById(R.id.'+temp+ ')')
-        print(tempStr[tempStr.index('<') + 1:-1]+' '+temp+';')
+        print('@ViewById(R.id.' + temp + ')')
+        print(tempStr[tempStr.index('<') + 1:-1] + ' ' + temp + ';')
     tempStr = line
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
