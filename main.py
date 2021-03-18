@@ -13,9 +13,9 @@ def print_hi(name):
 
 # Press the green button in the gutter to run the script. if __name__ == '__main__': print_hi('PyCharm') try: with
 # open('/Users/danny/Desktop/petshop/centre/src/main/res/layout/layout_purchase_request_detail.xml', 'r') as xml:
-# print(xml) # for str in xml.readline() #     print str finally: if xml: xml.close() path =
-# '/Users/danny/Desktop/petshop/centre/src/main/res/layout/layout_purchase_request_detail.xml'
-path = 'G:\\work\\petshop\\centre\\src\\main\\res\\layout\\layout_purchase_request_detail.xml'
+# print(xml) # for str in xml.readline() #     print str finally: if xml: xml.close()
+path = '/Users/danny/Desktop/petshop/centre/src/main/res/layout/layout_purchase_request_detail.xml'
+# path = 'G:\\work\\petshop\\centre\\src\\main\\res\\layout\\layout_purchase_request_detail.xml'
 tempStr = ''
 # with open(path, 'rb') as lines:
 #     for line in lines.readline():
