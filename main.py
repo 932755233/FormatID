@@ -23,8 +23,9 @@ tempStr = ''
 for line in fileinput.input(path, openhook=fileinput.hook_encoded('utf-8')):
     if line.find('android:id="@+id/') >= 0:
         temp = line.split('/')[1][:-2]
-        print('@ViewById(R.id.' + temp + ')')
-        print(tempStr[tempStr.index('<') + 1:-1] + ' ' + temp + ';')
+        # print('@ViewById(R.id.' + temp + ')')
+        # print(tempStr[tempStr.index('<') + 1:-1] + ' ' + temp + ';')
+        print('%s.setText();'%temp)
     tempStr = line
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
