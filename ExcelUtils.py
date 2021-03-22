@@ -7,7 +7,7 @@ rows = sheet.nrows
 
 # for i in range(rows):
 #     print(sheet.row_values(i)[:13])
-
+# 根据excel生成bean需要的成员变量
 cols = sheet.ncols
 for i in range(cols):
     str = sheet.col_values(i)[0]

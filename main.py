@@ -27,5 +27,6 @@ for line in fileinput.input(path, openhook=fileinput.hook_encoded('utf-8')):
         # print(tempStr[tempStr.index('<') + 1:-1] + ' ' + temp + ';')
         print('%s.setText();'%temp)
     tempStr = line
-
+# 自动生成注释和控件
+# 生成settext
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
