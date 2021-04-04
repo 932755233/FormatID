@@ -20,29 +20,25 @@ tempStr = ''
 # with open(path, 'rb') as lines:
 #     for line in lines.readline():
 #         print(line)
+
 for line in fileinput.input(path, openhook=fileinput.hook_encoded('utf-8')):
     if line.find('android:id="@+id/') >= 0:
         temp = line.split('/')[1][:-2]
-        # print('@ViewById(R.id.' + temp + ')')
-        # print(tempStr[tempStr.index('<') + 1:-1] + ' ' + temp + ';')
         print('%s.setText();' % temp)
     tempStr = line
-
+print()
 for line in fileinput.input(path, openhook=fileinput.hook_encoded('utf-8')):
     if line.find('android:id="@+id/') >= 0:
         temp = line.split('/')[1][:-2]
-        # print('@ViewById(R.id.' + temp + ')')
-        # print(tempStr[tempStr.index('<') + 1:-1] + ' ' + temp + ';')
         print('TextView %s;' % temp)
     tempStr = line
-
+print()
 for line in fileinput.input(path, openhook=fileinput.hook_encoded('utf-8')):
     if line.find('android:id="@+id/') >= 0:
         temp = line.split('/')[1][:-2]
-        # print('@ViewById(R.id.' + temp + ')')
-        # print(tempStr[tempStr.index('<') + 1:-1] + ' ' + temp + ';')
-        print('%s= itemView.findViewById(R.id.%s);' % (temp, temp))
+        print('%s = itemView.findViewById(R.id.%s);' % (temp, temp))
     tempStr = line
+
 # 自动生成注释和控件
 # 生成settext
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
