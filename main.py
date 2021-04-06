@@ -14,19 +14,31 @@ def print_hi(name):
 # Press the green button in the gutter to run the script. if __name__ == '__main__': print_hi('PyCharm') try: with
 # open('/Users/danny/Desktop/petshop/centre/src/main/res/layout/layout_purchase_request_detail.xml', 'r') as xml:
 # print(xml) # for str in xml.readline() #     print str finally: if xml: xml.close()
-path = '/Users/danny/Desktop/petshop/centre/src/main/res/layout/layout_purchase_request_detail.xml'
-# path = 'G:\\work\\petshop\\centre\\src\\main\\res\\layout\\layout_purchase_request_detail.xml'
+# path = '/Users/danny/Desktop/petshop/centre/src/main/res/layout/item_sell_out_warehouse.xml'
+path = 'G:\\work\\petshop\\centre\\src\\main\\res\\layout\\item_sell_out_warehouse.xml'
 tempStr = ''
 # with open(path, 'rb') as lines:
 #     for line in lines.readline():
 #         print(line)
+
 for line in fileinput.input(path, openhook=fileinput.hook_encoded('utf-8')):
     if line.find('android:id="@+id/') >= 0:
         temp = line.split('/')[1][:-2]
-        # print('@ViewById(R.id.' + temp + ')')
-        # print(tempStr[tempStr.index('<') + 1:-1] + ' ' + temp + ';')
-        print('%s.setText();'%temp)
+        print('%s.setText();' % temp)
     tempStr = line
+print()
+for line in fileinput.input(path, openhook=fileinput.hook_encoded('utf-8')):
+    if line.find('android:id="@+id/') >= 0:
+        temp = line.split('/')[1][:-2]
+        print('TextView %s;' % temp)
+    tempStr = line
+print()
+for line in fileinput.input(path, openhook=fileinput.hook_encoded('utf-8')):
+    if line.find('android:id="@+id/') >= 0:
+        temp = line.split('/')[1][:-2]
+        print('%s = itemView.findViewById(R.id.%s);' % (temp, temp))
+    tempStr = line
+
 # 自动生成注释和控件
 # 生成settext
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
