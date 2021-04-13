@@ -43,7 +43,9 @@ for i in range(index):
     with keyboard.pressed(Key.shift):
         keyboard.press(Key.tab)
         keyboard.release(Key.tab)
+
     time.sleep(0.5)
+
     numStr = '000' + str(i + 1)
     numStr = kuweiNumber + '.' + numStr[-4:]
     toClip(numStr)
