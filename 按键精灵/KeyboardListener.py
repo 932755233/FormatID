@@ -9,7 +9,10 @@ def on_press(key):
 
 
 def on_release(key):
-    pass
+    try:
+        print(str(key.char) + '')
+    except AttributeError:
+        print(str(key) + '')
 
 
 with keyboard.Listener(on_press=on_press) as listener:
