@@ -1,0 +1,41 @@
+import time
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.chrome.options import Options
+
+# chrome.exe --remote-debugging-port=9222 --user-data-dir="F:\selenium\AutomationProfile"
+
+chrome_options = Options()
+chrome_options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
+chrome_driver = "C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe"
+driver = webdriver.Chrome(chrome_driver, chrome_options=chrome_options)
+
+text = driver.find_elements_by_class_name("deferredfeedback")
+print(driver.title)
+print(text[0].find_elements_by_class_name("r0")[0].text)
+r0 = driver.find_elements_by_class_name("r0")
+
+for inputElement in r0:
+    inputElement.find_element_by_tag_name("input").click()
+# browser = webdriver.Chrome()
+# browser.get("http://student.ouchn.cn/#/home")
+
+# browser = webdriver.Chrome()  # 创建实例，支持Chrome，Firefox等等
+# browser.get('https://www.baidu.com/')  # 访问百度
+# browser.maximize_window()  # 窗口最大化
+# browser.find_element_by_name('wd').send_keys('Apple')  # 按name查找.传字符串
+# browser.find_element_by_id('su').click()  # 按id查找.单击
+#
+# time.sleep(2)  # 百度跳太快23333
+# actions = ActionChains(browser)  # 创建事件链
+# element = browser.find_element_by_id('result_logo')  # 找到元素
+# actions.move_to_element_with_offset(element, 210, 180)  # 相对位置移动鼠标
+# actions.click()  # 单击
+# actions.perform()  # 执行以上步骤
+#
+# browser.switch_to.window(browser.window_handles[-1])  # 切换到新打开的页面
+# browser.find_element_by_css_selector('.ac-gn-link.ac-gn-link-mac').click()
+# # Compound class names 用 css selector
+#
+# browser.delete_all_cookies()  # Cookie操作详见文档
+# browser.refresh()  # 刷新页面
