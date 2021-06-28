@@ -2,10 +2,8 @@ beautifulsoup4==4.9.3
 clipboard==0.0.4
 comtypes==1.1.9
 lxml==4.6.3
-pynput @ file:///G:/CodeGitHub/FormatID/pynput-1.7.3-py2.py3-none-any.whl
 pyperclip==1.8.2
 python-docx==0.8.11
-pywin32 @ file:///G:/CodeGitHub/FormatID/pywin32-300-cp39-cp39-win_amd64.whl
 selenium==3.141.0
 six==1.15.0
 soupsieve==2.2.1
