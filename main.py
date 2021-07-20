@@ -15,7 +15,8 @@ def print_hi(name):
 # open('/Users/danny/Desktop/petshop/centre/src/main/res/layout/layout_purchase_request_detail.xml', 'r') as xml:
 # print(xml) # for str in xml.readline() #     print str finally: if xml: xml.close()
 # path = '/Users/danny/Desktop/petshop/centre/src/main/res/layout/item_sell_out_warehouse.xml'
-path = 'G:\\work\\petshop\\centre\\src\\main\\res\\layout\\item_material_find_location.xml'
+# path = 'G:\\work\\petshop\\centre\\src\\main\\res\\layout\\item_wmstask_material.xml'
+path = 'G:\\work\\petshop\\agent\\src\\main\\res\\layout\\item_mission_confirm.xml'
 tempStr = ''
 # with open(path, 'rb') as lines:
 #     for line in lines.readline():
