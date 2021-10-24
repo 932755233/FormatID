@@ -1,0 +1,12 @@
+
+select T_SD_PostRequisition.CFYUNXUCHAIDAN as CFYUNXUCHAIDAN, T_IM_SaleIssueBill.FID,T_IM_SaleIssueBill.FCONTROLUNITID,T_IM_SaleIssueBill.FNUMBER,to_char(T_IM_SaleIssueBill.FBIZDATE,'yyyy-MM-dd')as FBIZDATE,T_IM_SaleIssueBill.FDESCRIPTION,T_IM_SaleIssueBill.FSOURCEBILLID,T_IM_SaleIssueBill.FBASESTATUS,T_SCM_BizType.fname_l2 as FBIZTYPENAME,b1.fname_l2 as FSTORAGEORGUNITNAME,b2.fname_l2 as FADMINORGUNITNAME,T_SCM_TransactionType.fname_l2 as FTRANSACTIONTYPENAME,T_BD_Customer.fname_l2 as FCUSTOMERNAME,T_IM_SaleIssueBill.CFDAOHUODIZHI,T_IM_SaleIssueBill.CFJIEHUOREN,T_BD_Person.fname_l2 as CFPERSONNAME,T_BD_SaleGroup.fname_l2 as CFSALEGROUPNAME
+	from T_IM_SaleIssueBill
+	inner join T_SCM_BizType on T_IM_SaleIssueBill.FBIZTYPEID = T_SCM_BizType.fid
+	inner join T_ORG_BaseUnit b1 on T_IM_SaleIssueBill.FSTORAGEORGUNITID = b1.fid
+	inner join T_ORG_BaseUnit b2 on T_IM_SaleIssueBill.FADMINORGUNITID = b2.fid
+	inner join T_SCM_TransactionType on T_IM_SaleIssueBill.FTRANSACTIONTYPEID = T_SCM_TransactionType.fid
+	inner join T_BD_Customer on T_IM_SaleIssueBill.FCUSTOMERID =T_BD_Customer.fid
+	inner join T_BD_Person on T_IM_SaleIssueBill.CFPERSONID =T_BD_Person.fid
+	inner join T_BD_SaleGroup on T_IM_SaleIssueBill.CFSALEGROUPID = T_BD_SaleGroup.fid
+	inner join T_SD_PostRequisition on T_IM_SaleIssueBill.FSOURCEBILLID = T_SD_PostRequisition.fid
+	where T_IM_SaleIssueBill.FBASESTATUS ='1'
