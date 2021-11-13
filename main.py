@@ -15,7 +15,7 @@ def print_hi(name):
 # open('/Users/danny/Desktop/petshop/centre/src/main/res/layout/layout_purchase_request_detail.xml', 'r') as xml:
 # print(xml) # for str in xml.readline() #     print str finally: if xml: xml.close()
 # path = '/Users/danny/Desktop/petshop/centre/src/main/res/layout/item_sell_out_warehouse.xml'
-path = 'G:\\work\\petshop\\centre\\src\\main\\res\\layout\\item_gift_pur_req_bill_list.xml'
+path = 'G:\\work\\petshop\\centre\\src\\main\\res\\layout\\item_company_contend.xml'
 # path = 'G:\\work\\petshop\\agent\\src\\main\\res\\layout\\item_gift_pur_req_bill_list.xml'
 tempStr = ''
 # with open(path, 'rb') as lines:
@@ -43,7 +43,7 @@ print()
 for line in fileinput.input(path, openhook=fileinput.hook_encoded('utf-8')):
     if line.find('android:id="@+id/') >= 0:
         temp = line.split('/')[1][:-2]
-        print('%s = itemView.findViewById(R.id.%s);' % (temp, temp))
+        print('holder.%s = itemView.findViewById(R.id.%s);' % (temp, temp))
     tempStr = line
 
 print()
