@@ -14,8 +14,10 @@ def print_hi(name):
 # Press the green button in the gutter to run the script. if __name__ == '__main__': print_hi('PyCharm') try: with
 # open('/Users/danny/Desktop/petshop/centre/src/main/res/layout/layout_purchase_request_detail.xml', 'r') as xml:
 # print(xml) # for str in xml.readline() #     print str finally: if xml: xml.close()
-path = '/Users/danny/Desktop/petshop/centre/src/main/res/layout/layout_custinfosupple_company_info.xml'
+# path = '/Users/danny/Desktop/petshop/centre/src/main/res/layout/layout_custinfosupple_company_info.xml'
 # path = 'G:\\work\\petshop\\centre\\src\\main\\res\\layout\\item_gift_pur_req_bill_list.xml'
+# path = '/Users/danny/Desktop/petshop/centre/src/main/res/layout/item_sell_out_warehouse.xml'
+path = 'G:\\work\\petshop\\centre\\src\\main\\res\\layout\\activity_custinfosuppleinfo_bill_item.xml'
 # path = 'G:\\work\\petshop\\agent\\src\\main\\res\\layout\\item_gift_pur_req_bill_list.xml'
 tempStr = ''
 # with open(path, 'rb') as lines:
@@ -43,7 +45,7 @@ print()
 for line in fileinput.input(path, openhook=fileinput.hook_encoded('utf-8')):
     if line.find('android:id="@+id/') >= 0:
         temp = line.split('/')[1][:-2]
-        print('%s = itemView.findViewById(R.id.%s);' % (temp, temp))
+        print('holder.%s = itemView.findViewById(R.id.%s);' % (temp, temp))
     tempStr = line
 
 print()
