@@ -21,7 +21,9 @@ from selenium.webdriver.chrome.options import Options
 #
 # root = etree.Element("root")
 # print(etree.tostring(root))
-html = etree.parse(r'C:\Users\Danny\Desktop\html\专题测验：试答回顾.html', etree.HTMLParser())
+from selenium.webdriver.common.by import By
+
+html = etree.parse(r'C:\Users\Danny\Desktop\html\形考作业1：试答回顾.html', etree.HTMLParser())
 result = html.xpath('//div[contains(@class,"deferredfeedback")]')
 # # print(etree.tostring(result))
 #
@@ -34,9 +36,9 @@ chrome_options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
 chrome_driver = "C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe"
 driver = webdriver.Chrome(chrome_driver, chrome_options=chrome_options)
 
-div = driver.find_elements_by_class_name("deferredfeedback")
+div = driver.find_elements(By.CLASS_NAME,"deferredfeedback")
 for divv in div:
-    qtext = divv.find_elements_by_class_name("qtext")
+    qtext = divv.find_elements(By.CLASS_NAME,"qtext")
     for htmlDiv in result:
         htmlDivv = htmlDiv.xpath('./div/div/div[@class="qtext"]/p')
         # print(divv[0].text)
