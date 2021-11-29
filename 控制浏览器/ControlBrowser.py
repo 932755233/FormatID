@@ -4,25 +4,26 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
 
 # chrome.exe --remote-debugging-port=9222 --user-data-dir="F:\selenium\AutomationProfile"
+from selenium.webdriver.common.service import Service
 
-chrome_options = Options()
-chrome_options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
-chrome_driver = "C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe"
-driver = webdriver.Chrome(chrome_driver, chrome_options=chrome_options)
+# chrome_options = Options()
+# chrome_options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
+# s = Service(r"C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe")
+# driver = webdriver.Chrome(service=s, options=chrome_options)
 
-text = driver.find_elements_by_class_name("deferredfeedback")
-print(driver.title)
-print(text[0].find_elements_by_class_name("r0")[0].text)
-r0 = driver.find_elements_by_class_name("r0")
-
-for inputElement in r0:
-    inputElement.find_element_by_tag_name("input").click()
-# browser = webdriver.Chrome()
-# browser.get("http://student.ouchn.cn/#/home")
+# text = driver.find_elements("deferredfeedback")
+# print(driver.title)
+# print(text[0].find_elements("r0")[0].text)
+# r0 = driver.find_elements("r0")
+#
+# for inputElement in r0:
+#     inputElement.find_element_by_tag_name("input").click()
+browser = webdriver.Chrome()
+browser.get("http://student.ouchn.cn/#/home")
 
 # browser = webdriver.Chrome()  # 创建实例，支持Chrome，Firefox等等
 # browser.get('https://www.baidu.com/')  # 访问百度
-# browser.maximize_window()  # 窗口最大化
+browser.maximize_window()  # 窗口最大化
 # browser.find_element_by_name('wd').send_keys('Apple')  # 按name查找.传字符串
 # browser.find_element_by_id('su').click()  # 按id查找.单击
 #
