@@ -3,7 +3,7 @@ python项目中必须包含一个 requirements.txt 文件，用于记录所有�
 requirements.txt可以通过pip命令自动生成和安装
 
 生成requirements.txt文件
-pip freeze > requirements.txt
+pip3 freeze > requirements.txt
 
 安装requirements.txt依赖
-pip install -r requirements.txtppip
+pip3 install -r requirements.txtppip
