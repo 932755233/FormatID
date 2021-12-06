@@ -11,9 +11,10 @@ driver = webdriver.Chrome(chrome_driver, chrome_options=chrome_options)
 
 text = driver.find_elements(By.CLASS_NAME, "answer")
 print(driver.title)
-print(text[0].find_elements(By.CLASS_NAME, "r1")[0].text)
+print(text[0].find_elements(By.CLASS_NAME, "r0")[0].text)
 
-r0 = driver.find_elements(By.CLASS_NAME, "r1")
+
+r0 = driver.find_elements(By.CLASS_NAME, "r0")
 
 for inputElement in r0:
     inputElement.find_element(By.TAG_NAME,"input").click()

@@ -23,7 +23,9 @@ from selenium.webdriver.chrome.options import Options
 # print(etree.tostring(root))
 from selenium.webdriver.common.by import By
 
-html = etree.parse(r'C:\Users\Danny\Desktop\html\形考作业1：试答回顾.html', etree.HTMLParser())
+fileName = r'第1章 测验：试答回顾'
+
+html = etree.parse(r'C:\Users\Danny\Desktop\html\%s.html' % fileName, etree.HTMLParser())
 result = html.xpath('//div[contains(@class,"deferredfeedback")]')
 # # print(etree.tostring(result))
 #
@@ -36,9 +38,9 @@ chrome_options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
 chrome_driver = "C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe"
 driver = webdriver.Chrome(chrome_driver, chrome_options=chrome_options)
 
-div = driver.find_elements(By.CLASS_NAME,"deferredfeedback")
+div = driver.find_elements(By.CLASS_NAME, "deferredfeedback")
 for divv in div:
-    qtext = divv.find_elements(By.CLASS_NAME,"qtext")
+    qtext = divv.find_elements(By.CLASS_NAME, "qtext")
     for htmlDiv in result:
         htmlDivv = htmlDiv.xpath('./div/div/div[@class="qtext"]/p')
         # print(divv[0].text)
@@ -46,12 +48,12 @@ for divv in div:
         pText = str(htmlDivv[0].text)
         ssss = pText.find(qText)
         if qText in pText:
-            htmlAnswer = htmlDiv.xpath('./div/div/div/div[@class="rightanswer"]')
+            htmlAnswer = htmlDiv.xpath('./div/div/div/div[@class="generalfeedback"]/p')
             answerText = ''
             if "：" in htmlAnswer[0].text:
                 answerText = htmlAnswer[0].text[6:]
             else:
-                answerText = htmlAnswer[0].text[6:len(htmlAnswer[0].text) - 2]
+                answerText = htmlAnswer[0].text
             answerDiv = divv.find_element_by_class_name("answer").find_elements_by_xpath("./div")
             for answerItem in answerDiv:
                 psss = answerItem.find_elements_by_css_selector("p")
@@ -61,6 +63,6 @@ for divv in div:
                     pitem = answerItem.find_element_by_tag_name("p")
                 labelText = pitem.text
                 if labelText == answerText:
-                    inputItem =answerItem.find_element_by_tag_name("input")
+                    inputItem = answerItem.find_element_by_tag_name("input")
                     inputItem.click()
                     print(pText, "---", labelText)
