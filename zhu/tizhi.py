@@ -13,7 +13,7 @@ ascii_a = ord('A')
 
 colx = ord('G') - ascii_a
 
-fileName = r'六郓城县郓州街道办事处陈路口小学体测数据模板 '
+fileName = r'五郓城县郓州街道办事处陈路口小学体测数据模板 '
 path = r'C:\Users\Danny\Desktop\朱仰腾\%s.xls' % fileName
 
 feihuoliangStart = 2300
@@ -41,10 +41,10 @@ yangwoEnd = 45
 yangwoStartNv = 33
 yangwoEndNv = 42
 
-wangfanStart = 133
-wangfanEnd = 145
-wangfanStartNv = 149
-wangfanEndNv = 155
+wangfanStart = 105
+wangfanEnd = 117
+wangfanStartNv = 113
+wangfanEndNv = 122
 
 # workboox = xlrd.open_workbook('/Users/danny/Desktop/朱仰腾/二郓城县郓州街道办事处陈路口小学体测数据模板 .xls')
 workbook = xlrd.open_workbook(path)
@@ -87,7 +87,11 @@ if __name__ == '__main__':
         print(zuoweiti, end=' ')
         print(yifenzhong, end=' ')
         print(yangwo, end=' ')
-        wangfan = getNumber(wangfan, 2)
+        m, s = divmod(int(wangfan), 60)
+        bu0 = ''
+        if s < 10:
+            bu0 = '0'
+        wangfan = "%s'%s%s" % (m, bu0, s)
         print(wangfan)
         sheetss.write(i + 1, ord('L') - ascii_a, feihuoliang)
         sheetss.write(i + 1, ord('M') - ascii_a, mi50)
