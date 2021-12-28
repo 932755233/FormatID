@@ -16,8 +16,8 @@ def print_hi(name):
 # print(xml) # for str in xml.readline() #     print str finally: if xml: xml.close()
 # path = '/Users/danny/Desktop/petshop/centre/src/main/res/layout/layout_custinfosupple_company_info.xml'
 # path = 'G:\\work\\petshop\\centre\\src\\main\\res\\layout\\item_gift_pur_req_bill_list.xml'
-path = '/Users/danny/Desktop/petshop/centre/src/main/res/layout/item_purchase_order_list.xml'
-# path = 'G:\\work\\petshop\\centre\\src\\main\\res\\layout\\activity_custinfosuppleinfo_bill_item.xml'
+# path = '/Users/danny/Desktop/petshop/centre/src/main/res/layout/item_purchase_order_list.xml'
+path = 'G:\\work\\petshop\\centre\\src\\main\\res\\layout\\item_allocate_orders_entry.xml'
 # path = 'G:\\work\\petshop\\agent\\src\\main\\res\\layout\\item_gift_pur_req_bill_list.xml'
 tempStr = ''
 # with open(path, 'rb') as lines:
@@ -39,12 +39,20 @@ print()
 for line in fileinput.input(path, openhook=fileinput.hook_encoded('utf-8')):
     if line.find('android:id="@+id/') >= 0:
         temp = line.split('/')[1][:-2]
+        if temp[-3:] == 'red':
+            continue
+        if temp[-3:] == 'txt':
+            continue
         print('TextView %s;' % temp)
     tempStr = line
 print()
 for line in fileinput.input(path, openhook=fileinput.hook_encoded('utf-8')):
     if line.find('android:id="@+id/') >= 0:
         temp = line.split('/')[1][:-2]
+        if temp[-3:] == 'red':
+            continue
+        if temp[-3:] == 'txt':
+            continue
         print('holder.%s = itemView.findViewById(R.id.%s);' % (temp, temp))
     tempStr = line
 
