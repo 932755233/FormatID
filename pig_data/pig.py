@@ -7,24 +7,26 @@ import urllib.request, urllib.error
 import ssl
 import datetime
 import chardet
+import requests
 
 # 装数据的集合
 datalist = []
 
 ssl._create_default_https_context = ssl._create_unverified_context
 
+
 def main():
-    # basePath = "https://www.baidu.com"
     # 获取路径
     dataList = getData()
 
     # 保存数据
     saveData(dataList)
 
+
 def getData():
     thisDate = datetime.datetime.now()
     thisDay = "%s-%s-%s" % (thisDate.year, thisDate.month, thisDate.day)
-    page = 2
+    page = 1
     flagg = False
 
     for i in range(200):
@@ -37,15 +39,13 @@ def getData():
         # 解析网页数据
         bs = BeautifulSoup(html, "html.parser")
 
-        # t_list=bs.find_all("div",class_="hot-img")  #因为class是一个类别，所以需要加一个下划线，不然会报错<div class="hot-img">
-        # print(t_list)
-
         tables = bs.find_all("table", class_="t_f")
 
         index = 0
-        # data = {}  # 另准备一个集合装取数据
+        # 用来显示的时间
         showDate = tables[1].find_all("tr")[2].td.text
         print("第%s页。此页时间：%s" % (page, showDate))
+        # 遍历表格里面的tr
         for trs in tables[1].find_all("tr"):
             index = index + 1
             if index < 3:
@@ -74,6 +74,7 @@ def getData():
         if flagg:
             break
         page = page + 1
+        # break
 
     print(datalist)
     return datalist
@@ -98,23 +99,13 @@ def saveData(dataList):
 def uskURL(basePath):
     heard = {
         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
-        # "Accept-Encoding": "utf-8"
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+        "Accept-Encoding": "GB2312"
         # 伪装为浏览器
     }
-    req = urllib.request.Request(basePath, headers=heard, method="GET")
     html = ""
-    try:
-        response = urllib.request.urlopen(req)
-        html = response.read()
-        fencoding = chardet.detect(html)
-        print(fencoding)
-    except urllib.error.URLError as e:
-        if hasattr(e, "code"):
-            print(e.code)
-        if hasattr(e, "reason"):
-            print(e.reason)
-        saveData(datalist)
+    r = requests.get(basePath, headers=heard)
+    html = r.text
 
     return html
 
