@@ -17,7 +17,7 @@ def print_hi(name):
 # path = '/Users/danny/Desktop/petshop/centre/src/main/res/layout/layout_custinfosupple_company_info.xml'
 # path = 'G:\\work\\petshop\\centre\\src\\main\\res\\layout\\item_gift_pur_req_bill_list.xml'
 # path = '/Users/danny/Desktop/petshop/centre/src/main/res/layout/item_purchase_order_list.xml'
-path = 'G:\\work\\petshop\\centre\\src\\main\\res\\layout\\layout_production_of_put_in_storage_detials.xml'
+path = 'G:\\work\\petshop\\centre\\src\\main\\res\\layout\\layout_allocate_orders_in_and_out.xml'
 # path = 'G:\\work\\petshop\\agent\\src\\main\\res\\layout\\item_gift_pur_req_bill_list.xml'
 tempStr = ''
 # with open(path, 'rb') as lines:
