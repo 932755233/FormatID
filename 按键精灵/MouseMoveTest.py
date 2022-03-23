@@ -7,11 +7,12 @@ mouse = mouse.Controller()
 
 
 def move():
-    mouse.move(-200, 300)
+    # mouse.move(-200, 300)
+    #
+    # time.sleep(0.5)
+    time.sleep(2)
 
-    time.sleep(0.5)
-
-    mouse.position = (34, 41)
+    mouse.position = (1540, 930)
 
     time.sleep(0.5)
 
