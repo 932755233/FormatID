@@ -17,8 +17,8 @@ def print_hi(name):
 # path = '/Users/danny/Desktop/petshop/centre/src/main/res/layout/layout_custinfosupple_company_info.xml'
 # path = 'G:\\work\\petshop\\centre\\src\\main\\res\\layout\\item_gift_pur_req_bill_list.xml'
 # path = '/Users/danny/Desktop/petshop/centre/src/main/res/layout/item_purchase_order_list.xml'
-path = 'G:\\work\\petshop\\centre\\src\\main\\res\\layout\\layout_allocate_orders_in_and_out.xml'
-# path = 'G:\\work\\petshop\\agent\\src\\main\\res\\layout\\item_gift_pur_req_bill_list.xml'
+path = 'G:\\work\\petshop\\centre\\src\\main\\res\\layout\\layout_new_customer_contract_over_due.xml'
+# path = 'G:\\work\\petshop\\agent\\src\\main\\res\\layout\\layout_qr_code_query.xml'
 tempStr = ''
 # with open(path, 'rb') as lines:
 #     for line in lines.readline():
@@ -74,6 +74,21 @@ for line in fileinput.input(path, openhook=fileinput.hook_encoded('utf-8')):
             tempStrSS = line.split('=')[1][1:-6]
     tempStr = line
 
+for line in fileinput.input(path, openhook=fileinput.hook_encoded('utf-8')):
+    if line.find('android:id="@+id/') >= 0:
+        temp = line.split('/')[1][:-2]
+        if temp[-3:] == 'red':
+            continue
+        if temp[-3:] == 'txt':
+            continue
+        print('holder.%s.setBackgroundResource(R.drawable.rounded_text);' % temp)
+        print('holder.%s.setFocusable(false);' % temp)
+        print('holder.%s.setClickable(false);' % temp)
+        print('holder.%s.setFocusableInTouchMode(false);' % temp)
+        print()
+    tempStr = line
+
+print()
 # 自动生成注释和控件
 # 生成settext
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

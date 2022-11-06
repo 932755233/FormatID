@@ -1,18 +1,6 @@
-select tt.fmaterialname,T_SD_PostRequisition.CFYUNXUCHAIDAN as CFYUNXUCHAIDAN, T_IM_SaleIssueBill.FID,T_IM_SaleIssueBill.FCONTROLUNITID,T_IM_SaleIssueBill.FNUMBER,to_char(T_IM_SaleIssueBill.FBIZDATE,'yyyy-MM-dd')as FBIZDATE,T_IM_SaleIssueBill.FDESCRIPTION,T_IM_SaleIssueBill.FSOURCEBILLID,T_IM_SaleIssueBill.FBASESTATUS,T_SCM_BizType.fname_l2 as FBIZTYPENAME,b1.fname_l2 as FSTORAGEORGUNITNAME,b2.fname_l2 as FADMINORGUNITNAME,T_SCM_TransactionType.fname_l2 as FTRANSACTIONTYPENAME,T_BD_Customer.fname_l2 as FCUSTOMERNAME,T_IM_SaleIssueBill.CFDAOHUODIZHI,T_IM_SaleIssueBill.CFJIEHUOREN,T_BD_Person.fname_l2 as CFPERSONNAME,T_BD_SaleGroup.fname_l2 as CFSALEGROUPNAME
-	from T_IM_SaleIssueBill
-	inner join T_SCM_BizType on T_IM_SaleIssueBill.FBIZTYPEID = T_SCM_BizType.fid
-	inner join T_ORG_BaseUnit b1 on T_IM_SaleIssueBill.FSTORAGEORGUNITID = b1.fid
-	inner join T_ORG_BaseUnit b2 on T_IM_SaleIssueBill.FADMINORGUNITID = b2.fid
-	inner join T_SCM_TransactionType on T_IM_SaleIssueBill.FTRANSACTIONTYPEID = T_SCM_TransactionType.fid
-	inner join T_BD_Customer on T_IM_SaleIssueBill.FCUSTOMERID =T_BD_Customer.fid
-	inner join T_BD_Person on T_IM_SaleIssueBill.CFPERSONID =T_BD_Person.fid
-	inner join T_BD_SaleGroup on T_IM_SaleIssueBill.CFSALEGROUPID = T_BD_SaleGroup.fid
-	inner join T_SD_PostRequisition on T_IM_SaleIssueBill.FSOURCEBILLID = T_SD_PostRequisition.fid
-    inner join  (
-    		select  to_char(wm_concat(translate(t_bd_material.fname_l2 || '<'|| t_bd_material.fmodel || '> ' || t1.fqty || '件;' using CHAR_CS))) fmaterialname,t1.FPARENTID from  t_bd_material
-	     	inner  join  (
-	     		select T_IM_SaleIssueentry.FMATERIALID,sum(FASSISTQTY) fqty,T_IM_SaleIssueentry.FPARENTID from T_IM_SaleIssueentry
-				group by T_IM_SaleIssueentry.FMATERIALID,T_IM_SaleIssueentry.FPARENTID
-			) t1  on  t_bd_material.fid = t1.FMATERIALID  group by t1.FPARENTID
-	    ) tt  on  T_IM_SaleIssueBill.fid = tt.fparentid
-	where T_IM_SaleIssueBill.FBASESTATUS ='1'
+select WmsEntry.GeneralName+'_批次-'+WmsEntry.BatchNo+'_装箱比率-'+WmsEntry.TagRatio fName from T_QR_TaskBill
+ inner join T_QR_TaskBillProduct on T_QR_TaskBill.fID = T_QR_TaskBillProduct.fParentid
+ inner join T_QR_TaskBillProductCode on T_QR_TaskBillProduct.fID = T_QR_TaskBillProductCode.fParentid
+ inner join WmsEntryDtl on T_QR_TaskBillProductCode.Code = WmsEntryDtl.Code
+ inner join WmsEntry on WmsEntryDtl.TaskNo = WmsEntry.TaskNo
+ where T_QR_TaskBill.ftasknumber = 'MJL-D_ZB-2021-052631-SCM'
