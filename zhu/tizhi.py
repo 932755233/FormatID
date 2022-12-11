@@ -13,53 +13,54 @@ ascii_a = ord('A')
 
 colx = ord('G') - ascii_a
 
-fileName = r'一年级郓城县郓州街道办事处陈路口小学体测数据模板 '
+fileName = r'郓城县郓州街道办事处陈路口小学体测数据模板'
 path = r'C:\Users\Danny\Desktop\朱仰腾\%s.xls' % fileName
+outpath = r'C:\Users\Danny\Desktop\朱仰腾\1111.xls'
 
-indexEnd = 310
+indexEnd = 10000000
 
-feihuoliangStart = 1180
-feihuoliangEnd = 1400
-feihuoliangStartNv = 920
-feihuoliangEndNv = 1100
-
-# 这里需要标准乘以十
-mi50Start = 112
-mi50End = 105
-mi50StartNv = 118
-mi50EndNv = 126
+feihuoliangStart = 2300
+feihuoliangEnd = 2750
+feihuoliangStartNv = 1920
+feihuoliangEndNv = 2200
 
 # 这里需要标准乘以十
-zuoweitiStart = 66
-zuoweitiEnd = 110
-zuoweitiStartNv = 101
-zuoweitiEndNv = 134
+mi50Start = 86
+mi50End = 90
+mi50StartNv = 90
+mi50EndNv = 96
 
-yifenzhongStart = 59
-yifenzhongEnd = 87
-yifenzhongStartNv = 52
-yifenzhongEndNv = 87
+# 这里需要标准乘以十
+zuoweitiStart = 51
+zuoweitiEnd = 90
+zuoweitiStartNv = 96
+zuoweitiEndNv = 129
+
+yifenzhongStart = 128
+yifenzhongEnd = 147
+yifenzhongStartNv = 129
+yifenzhongEndNv = 159
 
 yangwoStart = 35
 yangwoEnd = 45
 yangwoStartNv = 33
 yangwoEndNv = 42
 
-wangfanStart = 105
-wangfanEnd = 117
-wangfanStartNv = 113
-wangfanEndNv = 122
+wangfanStart = 133
+wangfanEnd = 145
+wangfanStartNv = 149
+wangfanEndNv = 155
 
 # workboox = xlrd.open_workbook('/Users/danny/Desktop/朱仰腾/二郓城县郓州街道办事处陈路口小学体测数据模板 .xls')
 workbook = xlrd.open_workbook(path)
-sheet = workbook.sheet_by_index(0)
+sheet = workbook.sheet_by_index(1)
 
 outworkbook = copy(workbook)
-sheetss = outworkbook.get_sheet(0)
-
+sheetss = outworkbook.get_sheet(1)
 if __name__ == '__main__':
-    for i in range(indexEnd - 1):
+    for i in range(0, sheet.nrows - 1):
         print(str(i + 1), sheet.cell(i + 1, ord('F') - ascii_a).value, end=' ')
+
         xinbie = sheet.cell(i + 1, colx).value
         print(xinbie, end=' ')
         feihuoliang = ''
@@ -101,9 +102,11 @@ if __name__ == '__main__':
         sheetss.write(i + 1, ord('M') - ascii_a, mi50)
         sheetss.write(i + 1, ord('N') - ascii_a, zuoweiti)
         sheetss.write(i + 1, ord('O') - ascii_a, yifenzhong)
-        # sheetss.write(i + 1, ord('P') - ascii_a, yangwo)
-        # sheetss.write(i + 1, ord('Q') - ascii_a, wangfan)
+        sheetss.write(i + 1, ord('P') - ascii_a, yangwo)
+        sheetss.write(i + 1, ord('Q') - ascii_a, wangfan)
     outworkbook.save(path)
+    print("生成文件成功")
+    print('一共>', sheet.nrows, '<行')
 
 
 def getRandom(start, end):
