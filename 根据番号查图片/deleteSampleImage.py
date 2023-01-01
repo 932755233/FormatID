@@ -1,5 +1,13 @@
 import os
 
+def deleteOne(path):
+    # 找到SampleImage，实力图像
+    samplePath = os.path.join(path, 'SampleImage')
+    if os.path.exists(samplePath):
+        for tempFileName in os.listdir(samplePath):
+            os.remove(os.path.join(samplePath, tempFileName))
+        os.rmdir(samplePath)
+        # print('删除SampleImage文件夹')
 
 def delete(path):
     os.chdir(path)
@@ -26,9 +34,12 @@ def delete(path):
                 if '.nfo' == fileNames[1]:
                     os.remove(os.path.join(fileName, jpgnfoFileName))
                     print('   删除nfo文件')
+                if '作品介绍' in fileNames[0]:
+                    os.remove(os.path.join(fileName, jpgnfoFileName))
+                    print('   删除作品介绍文件')
 
 
 if __name__ == '__main__':
     # 删除文件夹里的jpg，nfo，db文件，SampleImage文件夹
-    # delete(r'Z:\LSP\AdultVideo')
-    delete(r'Z:\LSP\测试')
+    delete(r'Z:\LSP\AdultVideo')
+    # delete(r'Z:\LSP\测试')
