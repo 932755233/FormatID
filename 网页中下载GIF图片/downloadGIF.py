@@ -54,8 +54,8 @@ def saveGIF(gifBeanStr, index):
         fp.write(imgData)
 
 
-if __name__ == '__main__':
-    gifBeanList = network('https://www.javbus.com/forum/forum.php?mod=viewthread&tid=110393&extra=page%3D3')
+def doTask():
+    gifBeanList = network('https://www.javbus.com/forum/forum.php?mod=viewthread&tid=110554')
     print('------开始下载图片，一共%d个------' % len(gifBeanList))
     index = 0
     # saveGIF(gifBeanList[0], 0)
@@ -64,3 +64,81 @@ if __name__ == '__main__':
         saveGIF(gifBeanStr, index)
         index = index + 1
     print('------全部下载完毕------')
+
+
+def network2(url):
+    print('获取网页')
+    response = requests.get(url, headers=headers, proxies=proxies)
+
+    soup = BeautifulSoup(response.text, 'html.parser')
+    table = soup.find('div', attrs={'class': 't_fsz'}).find('table')
+
+    with open('./dowmload_gif_table_temp.html', 'w', encoding='utf-8') as fp:
+        fp.write(str(table))
+        # fp.write(response.text)
+        print(' 写入文件')
+
+    file = open('./dowmload_gif_table_temp.html', 'r', encoding='UTF-8')
+    gifBeanList = []
+    pattern = re.compile(r'出处：(.*?)<br', re.I)
+   # pattern = re.compile(r'size="5">[0-9]{1,3}\.(.*?)<', re.I)
+    gifpattern = re.compile(r'[a-zA-z]+://[\S]*.gif', re.I)
+    ciliPattern = re.compile(r'magnet:\?xt=urn:btih:(.*?)<', re.I)
+
+    index = -1
+    for line in file:
+        if pattern.search(line) != None:
+            gifBeanList.append({'name': pattern.search(line).groups()[0], 'files': [], 'cili': ''})
+            index = index + 1
+        else:
+            if len(gifBeanList) > 0:
+                gifurl = gifpattern.search(line)
+                if gifurl != None:
+                    gifBeanList[index]['files'].append(gifurl.group())
+                ciliStr = ciliPattern.search(line)
+                if ciliStr != None:
+                    gifBeanList[index]['cili'] = 'magnet:?xt=urn:btih:%s' % ciliStr.groups()[0]
+
+    file.close()
+    return gifBeanList
+
+
+def downloadFile(name, url):
+    print('  下载gif%s----%s' % (name, url))
+    imgData = requests.get(url, headers=headers2).content
+    with open('./gif/%s.gif' % name, 'wb') as fp:
+        fp.write(imgData)
+        print('  保存gif完')
+
+
+def saveGIFFile(gifBeanList):
+    print('保存文件')
+    alltext = ''
+    for gifBean in gifBeanList:
+        name = gifBean['name']
+        files = gifBean['files']
+        alltext = '%s%s\n%s\n' % (alltext, gifBean['name'], gifBean['cili'])
+        index = 0
+        print(' 保存%s------数量：%s' % (name, len(files)))
+        for fileurl in files:
+            # print(name + '------' + fileurl)
+            name = name.replace('<','')
+            name = name.replace('/','')
+            name = name.replace('>','')
+            downloadFile('%s-(%d)' % (name, index), fileurl)
+            index = index + 1
+    saveText(alltext)
+    print('全部保存完毕')
+
+
+def saveText(alltext):
+    with open('./gif/磁力链接.txt', 'w') as fp:
+        fp.write(alltext)
+        print('  保存文件完')
+
+
+if __name__ == '__main__':
+    gifBeanList = network2('https://www.javbus.com/forum/forum.php?mod=viewthread&tid=109541')
+    print(len(gifBeanList))
+    print(gifBeanList)
+    saveGIFFile(gifBeanList)

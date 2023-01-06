@@ -4,6 +4,7 @@ import os
 import re
 import sys
 import shutil
+import time
 from pathlib import Path
 
 import requests
@@ -12,6 +13,8 @@ from PIL import Image
 from requests.exceptions import SSLError
 
 from 根据番号查图片 import deleteSampleImage
+
+now_date = time.strftime("%Y-%m-%d", time.localtime())
 
 proxy = '192.168.3.220:7890'
 proxies = {
@@ -27,9 +30,10 @@ headers = {
     # 'cookie':'rr=https%3A%2F%2Fcn1.at101.design%2F; iadult=1; hello=1; __cf_bm=p5gOpquFCoj5a8TQG4EXkJgz3Ex7FnsYEfEnocDLOvQ-1672239337-0-Aald4rPN3hah3kmMughmjJnSoAXumWxycfq63F5ZGSO30pHcwtAbqaAZLHGXuYc6q8I0nZgdiJR75WSZ20zsF7Fd02vMkSA7GKGU+aEdw5fSL4rGkP3QLsGEgxf04R5AkhrkKQTrbTGgNWCpGXKzTss=; XSRF-TOKEN=eyJpdiI6ImZObDlvclwvZjN4SnhtMHNyb2NkcTNBPT0iLCJ2YWx1ZSI6InlqNUp4V3dSN2ZucDZYN2h0OExBT2NBMlVFZVpVWXNSUTZuR1NvbVMwMlZhVVJJTDhLNTBnTHIrQUFrNTJJVDIiLCJtYWMiOiI2OGFmNDM5NzE5MDc5ZGFjMTJmODJmYjZkMTVkNWViOGI0YWUyN2JlZjUwZjg2YzEyOTVjZTVjNmZkNmE5NTYzIn0%3D; miao_ss=eyJpdiI6IlZUczhoMFJjN2VhUlRFYis1NXBYZ3c9PSIsInZhbHVlIjoiR2RWRDZncElnemNZa0poTnhGbHNcL1ZoTmlnVDhhNndYcVgxSHFTMCtcL3VnbUVZTXAyWGtCclloaURQR2dwMXVaIiwibWFjIjoiZjBlM2QzZDRjM2FmNzhmZjBmNjliMzgzNGI4NTZiZWEzZmY2MDg5YmJhZDBmNjI5NzJmYzcxMDc0OWNmN2U5YyJ9'
 }
 
-videoTypeYuanZu = ('.mp4', '.rm', '.rmvb', '.avi')
+videoTypeYuanZu = ('.mp4')
 
-pattern = re.compile(r'[a-z]{2,7}-[0-9]{1,5}', re.I)
+pattern = re.compile(r'([0-9]{1,4})?[a-z]{2,8}-[a-z0-9]{1,7}', re.I)
+haveSubtitlePattern = re.compile(r'.*?-.*?-C', re.I)
 
 javBus = r'https://www.javbus.com'
 
@@ -37,6 +41,9 @@ javBus = r'https://www.javbus.com'
 javhd101 = r'https://avhd101.com/'
 javLibrary = r'https://www.g64w.com/cn/'
 javDB = r'https://javdb.com/'
+
+subtitlePath = r'H:\新建文件夹 (2)\湿巾\字幕\7000字幕'
+subtitleType = ['chi', 'jpn', 'eng', 'arm', 'kor', 'ita', 'fre', 'fus']
 
 avCodeList = []
 
@@ -55,13 +62,17 @@ def walkFilePath(finderPath):
                 file = os.path.splitext(tempFileName)
                 if isvideo(file[1]):
                     fileBean['filename'] = file[0]
-                # print(tempFileName)
+                    fileBean['havesubtitle'] = haveSubtitlePattern.match(file[0]) != None
             avCodeList.append(fileBean)
 
 
 # 获取AVcode
 def fenliavcode(fileName):
-    return pattern.search(fileName)[0]
+    rere = pattern.search(fileName)
+    if rere == None:
+        return fileName
+    else:
+        return rere[0]
 
 
 # 判断是否为视频文件
@@ -90,6 +101,7 @@ def networkJavBus(fileBean):
             fileBean['picurl'] = javBus + a.img['src']
         print('    内容概述')
         fileBean['plot'] = a.img['title']
+        fileBean['title'] = fileBean['filename'] + a.img['title']
         # fileBean['tag'] = soup.find_all('/html/body/div[5]/div[1]/div[2]/p[10]/span[1]/a')
         fileBean['genres'] = []
         genres = re.findall(
@@ -152,6 +164,7 @@ def networkAVHD(fileBean):
     a = h3.find('a')
     # 去掉a标签里面的mark标签
     [s.extract() for s in a(['mark'])]
+    fileBean['title'] = fileBean['filename'] + a.text.strip()
     fileBean['plot'] = '%s------%s' % (fileBean['plot'], a.text.strip())
     headers['cookie'] = ''
     print('    一句中文概述')
@@ -294,6 +307,11 @@ def savePicture(fileBean):
         fp.write(imgData)
         print('    fanart.jpg')
 
+    folderPath = fileBean['path'] + os.path.sep  + 'folder.jpg'
+    if os.path.exists(folderPath):
+        os.remove(folderPath)
+        print('    删除folder.jpg文件')
+
 
 def saveSampleImage(fileBean):
     imgePath = os.path.join(fileBean['path'], 'SampleImage')
@@ -363,26 +381,27 @@ def backdrop(fileBean):
 
 def formatNfo(fileBean):
     nfoText = '''<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-    <movie>
-     <plot>%s</plot>
-     <lockdata>false</lockdata>
-     <dateadded>2022-12-24 00:00:00</dateadded>
-     <year>%s</year>
-     <premiered>%s</premiered>
-     <releasedate>%s</releasedate>
-     <rating>%s</rating>\n''' % (
-        fileBean['plot'], fileBean['year'], fileBean['faxingdate'], fileBean['faxingdate'], fileBean['rating'])
+<movie>
+ <plot>%s</plot>
+ <lockdata>false</lockdata>
+ <dateadded>%s</dateadded>
+ <title>%s</title>
+ <year>%s</year>
+ <premiered>%s</premiered>
+ <releasedate>%s</releasedate>
+ <rating>%s</rating>\n''' % (
+        fileBean['plot'], now_date, fileBean['title'], fileBean['year'], fileBean['faxingdate'], fileBean['faxingdate'],
+        fileBean['rating'])
     if fileBean['active'] is not None and len(fileBean['active']) > 0:
         nfoText += ' <genre>%s</genre>\n' % fileBean['active']
     for genre in fileBean['genres']:
         nfoText += ' <genre>%s</genre>\n' % genre
     for star in fileBean['star']:
-        nfoText += ''' <tag></tag>
-     <actor>
-      <name>%s</name>
-      <role>AV女优</role>
-      <type>Actor</type>
-     </actor>\n''' % star
+        nfoText += ''' <actor>
+  <name>%s</name>
+  <role>AV女优</role>
+  <type>Actor</type>
+ </actor>\n''' % star
     nfoText += '''</movie>'''
     fileBean['nfotext'] = nfoText
 
@@ -394,8 +413,14 @@ def saveNfo(fileBean):
 
 
 def saveVideo(fileBean):
+    videoPath = fileBean['path'] + os.path.sep + fileBean['videoname']
+
     if '无' == fileBean['video']:
-        print('    无视频')
+        print('    无网络视频')
+        if searchType == 1:
+            print('      复制替代视频')
+            shutil.copyfile('./wuyugao.mp4', videoPath)
+
         return
     videoData = requests.get(fileBean['video'], headers=headers).content
     videoPath = fileBean['path'] + os.path.sep + fileBean['videoname']
@@ -422,46 +447,63 @@ def walksubtitleFilePath(subtitlePath):
         fileBean['filename'] = '%s-C' % avcode
         fileBean['basalpath'] = subtitlePath
         fileBean['path'] = os.path.join(subtitlePath, fileBean['filename']);
+        fileBean['havesubtitle'] = False
         avCodeList.append(fileBean)
     return 1
 
 
-def copySubtitleFile(type, fileBean):
+def findSubtitleFile(fileBean):
     fileList = []
-    for filename in os.listdir(fileBean['basalpath']):
-        # print(filename)
-        # avcodeRe = re.search('([a-zA-Z]{2,5}-[a-zA-Z0-9]{2,5})', filename)
-        # 反查文件，有同番号多文件情况
-        # filenametemp = re.search('%s(.*?)' % fileBean['avcode'], filename)
+    for filename in os.listdir(subtitlePath):
         filenametemp = re.search('%s(.+)' % fileBean['avcode'], filename)
         if filenametemp is not None:
             file = filenametemp.group()
-            if os.path.isfile(os.path.join(fileBean['basalpath'], file)):
+            if os.path.isfile(os.path.join(subtitlePath, file)):
                 fileList.append(file)
+    return fileList
+
+
+def copySubtitleFile(type, fileBean):
+    fileList = findSubtitleFile(fileBean)
+    if len(fileList) > 0:
+        print('    %s个字幕文件' % len(fileList))
+    else:
+        print('    无字幕文件')
+        if fileBean['havesubtitle']:
+            oldPath = r'./subtitle_simple.srt'
+            newfilename = r'%s.zul.srt' % fileBean['filename']
+            newPath = os.path.join(fileBean['path'], newfilename)
+            shutil.copyfile(oldPath, newPath)
+            print('      字幕标志文件')
+    index = 0
     for filename in fileList:
-        oldPath = os.path.join(fileBean['basalpath'], filename)
+        oldPath = os.path.join(subtitlePath, filename)
         if type == 1:
-            newPath = os.path.join(fileBean['path'], filename)
+            newfilename = '%s.%s%s' % (fileBean['filename'], subtitleType[index], os.path.splitext(filename)[1])
+            newPath = os.path.join(fileBean['path'], newfilename)
         else:
             newTempPath = os.path.join(fileBean['basalpath'], '未找到')
             Path(newTempPath).mkdir(parents=True, exist_ok=True)
             newPath = os.path.join(newTempPath, filename)
         shutil.copyfile(oldPath, newPath)
+        index = index + 1
+
+
+searchType = 0
 
 
 def doTask():
-    type = 0
-    # finderPath = r'Z:\LSP\AdultVideo'
+    finderPath = r'Z:\LSP\AdultVideo'
     # finderPath = r'Z:\LSP\测试'
     subtitlePath = r'H:\新建文件夹 (2)\湿巾\字幕\7000字幕'
     # subtitlePath = r'H:\新建文件夹 (2)\湿巾\字幕\测试'
 
-    # 获取群辉AV文件夹中的番号与文件路径
-    # walkFilePath(finderPath)
-    # 获取字幕文件列表
-    type = walksubtitleFilePath(subtitlePath)
-    # print(avCodeList)
-    # sys.exit()
+    if searchType == 0:
+        # 获取群辉AV文件夹中的番号与文件路径
+        walkFilePath(finderPath)
+    else:
+        # 获取字幕文件列表
+        walksubtitleFilePath(subtitlePath)
 
     print('拿到番号列表：')
     print()
@@ -477,9 +519,12 @@ def doTask():
         if 'F' == networkJavBus(fileBean):
             fileBean['result'] = '未找到'
             print('  未找到！')
-            if type == 1:
+            if searchType == 1:
                 print('  复制字幕文件到未找到')
                 copySubtitleFile(0, fileBean)
+            elif searchType == 0:
+                imgePath = os.path.join(fileBean['path'], 'SampleImage')
+                Path(imgePath).mkdir(parents=True, exist_ok=True)
             print('--------------------')
         else:
             networkAVHD(fileBean)
@@ -492,6 +537,7 @@ def doTask():
             for star in fileBean['star']:
                 stars += '%s,' % star
             print('''  信息展示：
+  标题：%s
   内容概述：%s
   发行年份：%s
   发行日期：%s
@@ -501,7 +547,8 @@ def doTask():
   演员：%s
   作品介绍视频链接：%s
             ''' % (
-                fileBean['plot'], fileBean['year'], fileBean['faxingdate'], fileBean['active'], fileBean['rating'],
+                fileBean['title'], fileBean['plot'], fileBean['year'], fileBean['faxingdate'], fileBean['active'],
+                fileBean['rating'],
                 genres[:-1],
                 stars[:-1],
                 fileBean['video']))
@@ -515,15 +562,14 @@ def doTask():
             print('  保存样本图像')
             saveSampleImage(fileBean)
             print('  保存作品介绍视频')
-            if type == 1:
+            if searchType == 1:
                 fileBean['videoname'] = fileBean['filename'] + '.mp4'
             else:
-                fileBean['videoname'] = fileBean['filename'] + '-作品介绍.mp4'
+                fileBean['videoname'] = fileBean['filename'] + '-trailer.mp4'
             saveVideo(fileBean)
-            if type == 1:
-                print('  复制字幕文件')
-                copySubtitleFile(1, fileBean)
-            print('------番号%s完成--------------'%fileBean['avcode'])
+            print('  复制字幕文件')
+            copySubtitleFile(1, fileBean)
+            print('------番号%s完成--------------' % fileBean['avcode'])
         # print(fileBean)
         index = index + 1
     print('%d个番号，全部完毕' % len(avCodeList))
