@@ -5,6 +5,7 @@ import re
 import sys
 import shutil
 import time
+import urllib3
 from pathlib import Path
 
 import requests
@@ -13,6 +14,8 @@ from PIL import Image
 from requests.exceptions import SSLError
 
 from 根据番号查图片 import deleteSampleImage
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 now_date = time.strftime("%Y-%m-%d", time.localtime())
 
@@ -34,6 +37,7 @@ videoTypeYuanZu = ('.mp4')
 
 pattern = re.compile(r'([0-9]{1,4})?[a-z]{2,8}-[a-z0-9]{1,7}', re.I)
 haveSubtitlePattern = re.compile(r'.*?-.*?-C', re.I)
+notfound = re.compile(r'404 Page Not Found!', re.I)
 
 javBus = r'https://www.javbus.com'
 
@@ -46,6 +50,10 @@ subtitlePath = r'H:\新建文件夹 (2)\湿巾\字幕\7000字幕'
 subtitleType = ['chi', 'jpn', 'eng', 'arm', 'kor', 'ita', 'fre', 'fus']
 
 avCodeList = []
+
+
+def requestNet(url, proxies=None):
+    return requests.get(url, headers=headers, proxies=proxies, verify=False)
 
 
 # 获取本地文件bean
@@ -84,7 +92,7 @@ def isvideo(fileType):
 def networkJavBus(fileBean):
     print('  连接JavBus')
     url = javBus + '/' + fileBean['avcode']
-    response = requests.get(url, headers=headers, proxies=proxies)
+    response = requestNet(url, proxies=proxies)
     urlText = response.text
     with open('./javbus_yellow.html', 'w', encoding='utf-8') as fp:
         fp.write(urlText)
@@ -92,8 +100,13 @@ def networkJavBus(fileBean):
     soup = BeautifulSoup(urlText, 'lxml')
     a = soup.find('a', attrs={'class': 'bigImage'})
     if a is None:
+        notf = re.search(notfound,urlText)
+        if notf is None:
+            print('    连接JavBus失败')
+            sys.exit()
         return 'F'
     else:
+        # sys.exit()
         print('    封面图url')
         if 'http' == a.img['src'][0:4]:
             fileBean['picurl'] = a.img['src']
@@ -142,7 +155,7 @@ def networkAVHD(fileBean):
     print('  连接Avhd101')
     headers['cookie'] = 'iadult=1'
     url = javhd101 + 'search?q=' + fileBean['avcode']
-    response = requests.get(url, headers=headers, proxies=proxies)
+    response = requestNet(url, proxies=proxies)
     urlText = response.text
     with open('./avhd_yellow2.html', 'w', encoding='utf-8') as fp:
         fp.write(urlText)
@@ -174,7 +187,7 @@ def networkAVHD(fileBean):
 def networkJavLibrary(fileBean):
     print('  连接JavLibrary')
     url = javLibrary + 'vl_searchbyid.php?keyword=' + fileBean['avcode']
-    response = requests.get(url, headers=headers)
+    response = requestNet(url)
     urlText = response.text
     with open('./javlibrary_yellow.html', 'w', encoding='utf-8') as fp:
         fp.write(urlText)
@@ -229,12 +242,12 @@ def networkJavLibrary(fileBean):
 
 
 def networkJavDB(fileBean):
-    print('  连接JavDB')
+    print('   连接JavDB')
     # 提前初始化防止报错
     fileBean['video'] = '无'
     # fileBean['avcode']='DLDSS-156'
     url = '%ssearch?q=%s&f=all' % (javDB, fileBean['avcode'])
-    urlText = requests.get(url, headers=headers, proxies=proxies).text
+    urlText = requestNet(url,  proxies=proxies).text
     with open('./javdb_yellow.html', 'w', encoding='utf-8') as fp:
         fp.write(urlText)
     soup = BeautifulSoup(urlText, 'html.parser')
@@ -252,7 +265,7 @@ def networkJavDB(fileBean):
 
 def javDBDetail(fileBean, nextpageUrl):
     url = javDB + nextpageUrl
-    urlText = requests.get(url, headers=headers, proxies=proxies).text
+    urlText = requestNet(url,  proxies=proxies).text
     with open('./javdb_detail_yellow.html', 'w', encoding='utf-8') as fp:
         fp.write(urlText)
     soup = BeautifulSoup(urlText, 'html.parser')
@@ -282,7 +295,7 @@ def is_chinese(string):
 
 
 def savePicture(fileBean):
-    imgData = requests.get(fileBean['picurl'], headers=headers, proxies=proxies).content
+    imgData = requestNet(fileBean['picurl'], proxies=proxies).content
     # 以下两个路径正常图片
     picThumbPath = fileBean['path'] + os.path.sep + fileBean['filename'] + '-thumb.jpg'
 
@@ -307,7 +320,7 @@ def savePicture(fileBean):
         fp.write(imgData)
         print('    fanart.jpg')
 
-    folderPath = fileBean['path'] + os.path.sep  + 'folder.jpg'
+    folderPath = fileBean['path'] + os.path.sep + 'folder.jpg'
     if os.path.exists(folderPath):
         os.remove(folderPath)
         print('    删除folder.jpg文件')
@@ -328,11 +341,11 @@ def saveSampleImage(fileBean):
             if 'http' not in imageUrl:
                 imageUrl = javBus + imageUrl
                 tempProxies = proxies
+                print('添加javbus头的', end='')
             else:
                 tempProxies = None
-
             try:
-                imgData = requests.get(imageUrl, headers=headers, proxies=tempProxies).content
+                imgData = requestNet(imageUrl, proxies=tempProxies).content
             except:
                 print()
                 print('    %s样本图像下载问题，url：%s' % (fileBean['avcode'], imageUrl))
@@ -422,7 +435,7 @@ def saveVideo(fileBean):
             shutil.copyfile('./wuyugao.mp4', videoPath)
 
         return
-    videoData = requests.get(fileBean['video'], headers=headers).content
+    videoData = requestNet(fileBean['video']).content
     videoPath = fileBean['path'] + os.path.sep + fileBean['videoname']
     with open(videoPath, 'ab') as f:
         f.write(videoData)

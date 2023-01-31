@@ -81,9 +81,10 @@ def network2(url):
     file = open('./dowmload_gif_table_temp.html', 'r', encoding='UTF-8')
     gifBeanList = []
     pattern = re.compile(r'出处：(.*?)<br', re.I)
-   # pattern = re.compile(r'size="5">[0-9]{1,3}\.(.*?)<', re.I)
+    # pattern = re.compile(r'size="5">[0-9]{1,3}\.(.*?)<', re.I)
     gifpattern = re.compile(r'[a-zA-z]+://[\S]*.gif', re.I)
-    ciliPattern = re.compile(r'magnet:\?xt=urn:btih:(.*?)<', re.I)
+    # ciliPattern = re.compile(r'"(magnet:\?xt=urn:btih:\w*?)"', re.I)
+    ciliPattern = re.compile(r'magnet:\?xt=urn:btih:\w*', re.I)
 
     index = -1
     for line in file:
@@ -97,14 +98,14 @@ def network2(url):
                     gifBeanList[index]['files'].append(gifurl.group())
                 ciliStr = ciliPattern.search(line)
                 if ciliStr != None:
-                    gifBeanList[index]['cili'] = 'magnet:?xt=urn:btih:%s' % ciliStr.groups()[0]
+                    gifBeanList[index]['cili'] = ciliStr.group()
 
     file.close()
     return gifBeanList
 
 
 def downloadFile(name, url):
-    print('  下载gif%s----%s' % (name, url))
+    print('  下载gif：%s----%s' % (name, url))
     imgData = requests.get(url, headers=headers2).content
     with open('./gif/%s.gif' % name, 'wb') as fp:
         fp.write(imgData)
@@ -117,28 +118,24 @@ def saveGIFFile(gifBeanList):
     for gifBean in gifBeanList:
         name = gifBean['name']
         files = gifBean['files']
-        alltext = '%s%s\n%s\n' % (alltext, gifBean['name'], gifBean['cili'])
         index = 0
         print(' 保存%s------数量：%s' % (name, len(files)))
+        print(' 磁力：%s' % gifBean['cili'])
         for fileurl in files:
             # print(name + '------' + fileurl)
-            name = name.replace('<','')
-            name = name.replace('/','')
-            name = name.replace('>','')
+            name = name.replace('<', '')
+            name = name.replace('/', '')
+            name = name.replace('>', '')
             downloadFile('%s-(%d)' % (name, index), fileurl)
             index = index + 1
-    saveText(alltext)
+        alltext = '%s\n%s\n' % (gifBean['name'], gifBean['cili'])
+        with open('./gif/磁力链接.txt', 'a') as fp:
+            fp.write(alltext)
+    # saveText(alltext)
     print('全部保存完毕')
 
-
-def saveText(alltext):
-    with open('./gif/磁力链接.txt', 'w') as fp:
-        fp.write(alltext)
-        print('  保存文件完')
-
-
 if __name__ == '__main__':
-    gifBeanList = network2('https://www.javbus.com/forum/forum.php?mod=viewthread&tid=109541')
+    gifBeanList = network2('https://www.javbus.com/forum/forum.php?mod=viewthread&tid=110828')
     print(len(gifBeanList))
-    print(gifBeanList)
+    # print(gifBeanList)
     saveGIFFile(gifBeanList)
