@@ -18,7 +18,17 @@
     # print('"name'+str(index)+'",',end="")
 # print('String', 'name' + str(index)+";")
 
-xmlname = '单据编码,number,业务日期,date,考核对象,assessor,行为项目,project,加减分类型,type,一级审核人,one_auditor,二级审核人,two_auditor,行为项目备注,project_remark,考核分数,assess_num,备注,remark'
+xmlname = r'数据中心,datacenter,' \
+          r'业&#8194;务&#8194;员,creator_name,' \
+          r'客&#8195;&#8195;户,emp_name,' \
+          r'计划开始&#8196;\n日期,plane_start_date,' \
+          r'计划完成&#8196;\n日期,plane_end_date,' \
+          r'事项描述,schedule,' \
+          r'完成标准,standard,' \
+          r'完成情况,progress,' \
+          r'提前提醒\n(天),leadtime,' \
+          r'任务状态,status,' \
+          r'备&#8195;&#8195;注,description'
 
 xmls = xmlname.split(',')
 
@@ -41,40 +51,36 @@ for name in xmls:
 
 
 for temp in result:
-    print(f'''
-     <RelativeLayout
-                    android:id="@+id/ll_{temp[1]}"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+    print(f'''<RelativeLayout
+    android:id="@+id/rl_{temp[1]}"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
                     android:background="@color/colorWhite"
                     android:paddingTop="@dimen/basicPadding_"
                     android:paddingBottom="@dimen/basicPadding_">
 
                     <TextView
-                        android:id="@+id/tv_red_{temp[1]}"
+                        android:id="@+id/tv_{temp[1]}_red"
                         style="@style/text_sign_Style"
                         android:visibility="invisible" />
 
                     <TextView
-                        android:id="@+id/tv_txt_{temp[1]}"
+                        android:id="@+id/tv_{temp[1]}_txt"
                         style="@style/text_Style"
-                        android:layout_toRightOf="@+id/tv_red_{temp[1]}"
+                        android:layout_toRightOf="@+id/tv_{temp[1]}_red"
                         android:text="{temp[0]}:" />
 
                     <TextView
                         android:id="@+id/tv_{temp[1]}"
                         style="@style/edit_style"
-                        android:layout_toRightOf="@+id/tv_txt_{temp[1]}"
+                        android:layout_toRightOf="@+id/tv_{temp[1]}_txt"
                         android:background="@drawable/rounded_text" />
-                </RelativeLayout>
-    
-    
-    ''')
+                </RelativeLayout>''')
 
 
 
 
-print(result)
+# print(result)
 
 
 
