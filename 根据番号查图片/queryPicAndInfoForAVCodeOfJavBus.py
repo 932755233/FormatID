@@ -6,6 +6,7 @@ import sys
 import shutil
 import time
 import urllib3
+import lxml
 from pathlib import Path
 
 import requests
@@ -46,7 +47,7 @@ javhd101 = r'https://avhd101.com/'
 javLibrary = r'https://www.g64w.com/cn/'
 javDB = r'https://javdb.com/'
 
-subtitlePath = r'H:\新建文件夹 (2)\湿巾\字幕\7000字幕'
+subtitlePath = r'H:\AV的文件\字幕\7000字幕'
 subtitleType = ['chi', 'jpn', 'eng', 'arm', 'kor', 'ita', 'fre', 'fus']
 
 avCodeList = []
@@ -100,7 +101,7 @@ def networkJavBus(fileBean):
     soup = BeautifulSoup(urlText, 'lxml')
     a = soup.find('a', attrs={'class': 'bigImage'})
     if a is None:
-        notf = re.search(notfound,urlText)
+        notf = re.search(notfound, urlText)
         if notf is None:
             print('    连接JavBus失败')
             sys.exit()
@@ -247,7 +248,7 @@ def networkJavDB(fileBean):
     fileBean['video'] = '无'
     # fileBean['avcode']='DLDSS-156'
     url = '%ssearch?q=%s&f=all' % (javDB, fileBean['avcode'])
-    urlText = requestNet(url,  proxies=proxies).text
+    urlText = requestNet(url, proxies=proxies).text
     with open('./javdb_yellow.html', 'w', encoding='utf-8') as fp:
         fp.write(urlText)
     soup = BeautifulSoup(urlText, 'html.parser')
@@ -265,7 +266,7 @@ def networkJavDB(fileBean):
 
 def javDBDetail(fileBean, nextpageUrl):
     url = javDB + nextpageUrl
-    urlText = requestNet(url,  proxies=proxies).text
+    urlText = requestNet(url, proxies=proxies).text
     with open('./javdb_detail_yellow.html', 'w', encoding='utf-8') as fp:
         fp.write(urlText)
     soup = BeautifulSoup(urlText, 'html.parser')
@@ -450,7 +451,7 @@ def walksubtitleFilePath(subtitlePath):
         # avcode = re.search('PPPD-688(.*?)',filename) 反查文件，有同番号多文件情况
         if avcodeRe is not None:
             avcode = avcodeRe.group()
-            if os.path.isdir(os.path.join(subtitlePath, '%s-C' % avcode)):
+            if os.path.isdir(os.path.join(subtitlePath + os.path.sep + 'result', '%s-C' % avcode)):
                 continue
             avcodeSet.append(avcode)
     avcodeSet = sorted(list(set(avcodeSet)), key=avcodeSet.index)
@@ -459,7 +460,7 @@ def walksubtitleFilePath(subtitlePath):
         fileBean['avcode'] = avcode
         fileBean['filename'] = '%s-C' % avcode
         fileBean['basalpath'] = subtitlePath
-        fileBean['path'] = os.path.join(subtitlePath, fileBean['filename']);
+        fileBean['path'] = os.path.join(subtitlePath + os.path.sep + 'result', fileBean['filename']);
         fileBean['havesubtitle'] = False
         avCodeList.append(fileBean)
     return 1
@@ -502,13 +503,13 @@ def copySubtitleFile(type, fileBean):
         index = index + 1
 
 
-searchType = 0
+searchType = 1
 
 
 def doTask():
     finderPath = r'Z:\LSP\AdultVideo'
     # finderPath = r'Z:\LSP\测试'
-    subtitlePath = r'H:\新建文件夹 (2)\湿巾\字幕\7000字幕'
+    subtitlePath = r'H:\AV的文件\字幕\7000字幕'
     # subtitlePath = r'H:\新建文件夹 (2)\湿巾\字幕\测试'
 
     if searchType == 0:

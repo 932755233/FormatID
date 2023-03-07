@@ -15,30 +15,25 @@
 
 # for index in range(15):
 #     print('this.name'+str(index)+'=str['+str(index)+'];')
-    # print('"name'+str(index)+'",',end="")
+# print('"name'+str(index)+'",',end="")
 # print('String', 'name' + str(index)+";")
 
-xmlname = r'数据中心,datacenter,' \
-          r'业&#8194;务&#8194;员,creator_name,' \
-          r'客&#8195;&#8195;户,emp_name,' \
-          r'计划开始&#8196;\n日期,plane_start_date,' \
-          r'计划完成&#8196;\n日期,plane_end_date,' \
-          r'事项描述,schedule,' \
-          r'完成标准,standard,' \
-          r'完成情况,progress,' \
-          r'提前提醒\n(天),leadtime,' \
-          r'任务状态,status,' \
+xmlname = r'单据编号,number,' \
+          r'业务日期,bizdate,' \
+          r'交&#8194;出&#8194;人,send_person,' \
+          r'交出人事&#8196;\n业部,send_person_business,' \
+          r'接&#8194;收&#8194;人,get_person,' \
+          r'接收人事&#8196;\n业部,get_person_business,' \
           r'备&#8195;&#8195;注,description'
 
 xmls = xmlname.split(',')
 
-index= 0
+index = 0
 ss = []
 result = []
 for name in xmls:
 
-
-    if index%2 == 0:
+    if index % 2 == 0:
         ss = []
         ss.append(name)
     else:
@@ -46,9 +41,7 @@ for name in xmls:
         result.append(ss)
 
     # print(name)
-    index = index +1
-
-
+    index = index + 1
 
 for temp in result:
     print(f'''<RelativeLayout
@@ -77,21 +70,4 @@ for temp in result:
                         android:background="@drawable/rounded_text" />
                 </RelativeLayout>''')
 
-
-
-
 # print(result)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
