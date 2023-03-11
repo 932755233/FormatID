@@ -27,12 +27,20 @@ tempStr = ''
 for line in fileinput.input(path, openhook=fileinput.hook_encoded('utf-8')):
     if line.find('android:id="@+id/') >= 0:
         temp = line.split('/')[1][:-2]
+        if temp[-3:] == 'red':
+            continue
+        if temp[-3:] == 'txt':
+            continue
         print('holder.%s.setText();' % temp)
     tempStr = line
 print()
 for line in fileinput.input(path, openhook=fileinput.hook_encoded('utf-8')):
     if line.find('android:id="@+id/') >= 0:
         temp = line.split('/')[1][:-2]
+        if temp[-3:] == 'red':
+            continue
+        if temp[-3:] == 'txt':
+            continue
         print('%s.setText();' % temp)
     tempStr = line
 print()

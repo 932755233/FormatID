@@ -502,8 +502,9 @@ def copySubtitleFile(type, fileBean):
         shutil.copyfile(oldPath, newPath)
         index = index + 1
 
-
-searchType = 1
+# 0为黑群晖av文件夹
+# 1为字幕文件夹
+searchType = 0
 
 
 def doTask():
