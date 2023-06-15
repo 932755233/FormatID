@@ -9,6 +9,7 @@ def walkFile(path):
             filenames.append(fileName)
     filenames.sort(key=lambda x: str(x[:-4]))
     print(filenames)
+    return filenames
 
 
 def formatFileName():
@@ -23,10 +24,12 @@ def formatFileName():
 
 if __name__ == '__main__':
     # walkFile('Z:\LSP\Video\自慰爱好者')
-    fileNameList = formatFileName()
-    path = r'Z:\LSP\Video\自慰爱好者'
+    # fileNameList = formatFileName()
+    # path = r'Z:\LSP\Video\自慰爱好者'
+    path = r'D:\FFOutput'
     os.chdir(path)
     print(os.getcwd())
+    fileNameList = walkFile(path)
 
     # stats = os.stat('1.mp4')
     # print(stats.st_size / 1024 / 1024)
@@ -34,8 +37,8 @@ if __name__ == '__main__':
     # print(os.getcwd())
     index = 1
     for fileName in fileNameList:
-        newFileName = '{:02d}'.format(index)
-        newFileName = 'S01E%s.mp4' % newFileName
+        # newFileName = '{:02d}'.format(index)
+        newFileName = 'S01E%s' % fileName
         print('更改文件名%s---%s' % (fileName, newFileName))
         os.rename(fileName, newFileName)
         index = index + 1
