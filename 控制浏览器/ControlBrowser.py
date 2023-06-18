@@ -19,11 +19,11 @@ from selenium.webdriver.common.service import Service
 # for inputElement in r0:
 #     inputElement.find_element_by_tag_name("input").click()
 browser = webdriver.Chrome()
-browser.get("http://student.ouchn.cn/#/home")
+browser.get("http://www.baidu.com")
 
 # browser = webdriver.Chrome()  # 创建实例，支持Chrome，Firefox等等
 # browser.get('https://www.baidu.com/')  # 访问百度
-browser.maximize_window()  # 窗口最大化
+# browser.maximize_window()  # 窗口最大化
 # browser.find_element_by_name('wd').send_keys('Apple')  # 按name查找.传字符串
 # browser.find_element_by_id('su').click()  # 按id查找.单击
 #
