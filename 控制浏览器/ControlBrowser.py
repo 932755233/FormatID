@@ -2,6 +2,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
 
 # chrome.exe --remote-debugging-port=9222 --user-data-dir="F:\selenium\AutomationProfile"
 from selenium.webdriver.common.service import Service
@@ -18,14 +19,16 @@ from selenium.webdriver.common.service import Service
 #
 # for inputElement in r0:
 #     inputElement.find_element_by_tag_name("input").click()
-browser = webdriver.Chrome()
-browser.get("http://www.baidu.com")
+# browser = webdriver.Chrome()
+# browser.get("http://www.baidu.com")
 
-# browser = webdriver.Chrome()  # 创建实例，支持Chrome，Firefox等等
-# browser.get('https://www.baidu.com/')  # 访问百度
-# browser.maximize_window()  # 窗口最大化
-# browser.find_element_by_name('wd').send_keys('Apple')  # 按name查找.传字符串
-# browser.find_element_by_id('su').click()  # 按id查找.单击
+# browser.quit()
+
+browser = webdriver.Chrome()  # 创建实例，支持Chrome，Firefox等等
+browser.get('https://www.baidu.com/')  # 访问百度
+browser.maximize_window()  # 窗口最大化
+browser.find_element(By.NAME, 'wd').send_keys('Apple')  # 按name查找.传字符串
+browser.find_element(By.ID, 'su').click()  # 按id查找.单击
 #
 # time.sleep(2)  # 百度跳太快23333
 # actions = ActionChains(browser)  # 创建事件链
@@ -39,4 +42,4 @@ browser.get("http://www.baidu.com")
 # # Compound class names 用 css selector
 #
 # browser.delete_all_cookies()  # Cookie操作详见文档
-# browser.refresh()  # 刷新页面
+browser.refresh()  # 刷新页面
