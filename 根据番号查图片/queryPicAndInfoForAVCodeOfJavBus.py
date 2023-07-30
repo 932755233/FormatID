@@ -508,7 +508,7 @@ searchType = 0
 
 
 def doTask():
-    finderPath = r'Z:\LSP\AdultVideo'
+    finderPath = r'Y:\LSP\AdultVideo'
     # finderPath = r'Z:\LSP\测试'
     subtitlePath = r'H:\AV的文件\字幕\7000字幕'
     # subtitlePath = r'H:\新建文件夹 (2)\湿巾\字幕\测试'
