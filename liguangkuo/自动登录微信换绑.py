@@ -5,6 +5,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
+import re
 
 import xlrd
 import requests
@@ -61,24 +62,65 @@ def requestNet(url, proxies=None):
     return requests.get(url, headers=headers, proxies=proxies, verify=False)
 
 
-def getAuthCode(phone):
+# 验证新手机使用
+def getNewPhoneAuthCode(phone):
     print(f'等待查询{phone}的验证码')
-    time.sleep(3)
+    time.sleep(10)
+    authcodecc = ''
+    for i in range(authCodeCh):
+        time.sleep(1)
+        response = requestNet('http://sms.szfangmm.com:3000/api/smslist?token=Go6ifqmfcbKqW39g77kkZQ')
+        jsons = response.json()
+        for json in jsons:
+            content = json['content']
+            if ('优酷土豆' in content) & (phone[-4:] == json['simnum'][-4:]):
+                # pattern = re.compile(r'[1-9]\d*', )
+                # authcodecc =  pattern.search(content)
+                authcodecc = re.search(r'[1-9]\d*', content).group()
+                print('查找到最近验证码:' + authcodecc)
+
+                return authcodecc
+    if authcodecc == '':
+        return input('请手动输入验证码：')
+
+
+# 验证身份使用
+def getYanzhengAuthCode(phone):
+    print(f'等待查询{phone}的验证码')
+    time.sleep(8)
+    authcodecc = ''
     for i in range(authCodeCh):
         time.sleep(1)
         response = requestNet('http://sms.szfangmm.com:3000/api/smslist?token=AeDuGbHvvMfBJ6WmebJptf')
         jsons = response.json()
         for json in jsons:
             content = json['content']
-            findex = content.find('【优酷土豆】您的短信验证码是')
+            if ('优酷土豆' in content) & (phone[-4:] == json['simnum'][-4:]):
+                authcodecc = re.search(r'[1-9]\d*', content).group()
+                print('查找到最近验证码:' + authcodecc)
+                return authcodecc
+    if authcodecc == '':
+        return input('请手动输入验证码：')
 
-            # print((phone[-4:] == json['simnum'][-4:]))
-            # print(phone[-4:])
-            # print(json['simnum'][-4:])
 
-            if findex == 1 & (phone[-4:] == json['simnum'][-4:]):
-                print('查找到最近验证码:' + content[15:21])
-                return content[15:21]
+# 登录使用
+def getAuthCode(phone):
+    print(f'等待查询{phone}的验证码')
+    time.sleep(8)
+    authcodecc = ''
+    for i in range(authCodeCh):
+        time.sleep(1)
+        response = requestNet('http://sms.szfangmm.com:3000/api/smslist?token=AeDuGbHvvMfBJ6WmebJptf')
+        jsons = response.json()
+        for json in jsons:
+            content = json['content']
+
+            if ('优酷土豆' in content) & (phone[-4:] == json['simnum'][-4:]):
+                authcodecc = re.search(r'[1-9]\d*', content).group()
+                print('查找到最近验证码:' + authcodecc)
+                return authcodecc
+    if authcodecc == '':
+        return input('请手动输入验证码：')
 
 
 def loginUsernameOfAuthCode(usernameStr):
@@ -104,7 +146,7 @@ def loginUsernameOfAuthCode(usernameStr):
     # driver.find_element(By.CLASS_NAME,"fm-agreement-text").click()
 
     # 点击发送验证码
-    driver.find_element(By.CLASS_NAME, "send-btn").click()
+    driver.find_element(By.CLASS_NAME, "send-btn-link").click()
     # 获取验证码输入
     authcodestr = getAuthCode(usernameStr)
     driver.find_element(By.ID, 'fm-smscode').send_keys(authcodestr)
@@ -114,7 +156,6 @@ def loginUsernameOfAuthCode(usernameStr):
 
 
 def loginUsernameAndPassword(usernameStr, passwordStr):
-
     window_handles = driver.window_handles
     driver.switch_to.window(window_handles[0])
     # 打开登录
@@ -139,21 +180,22 @@ def loginUsernameAndPassword(usernameStr, passwordStr):
     print(f"密码登陆成功---{usernameStr}")
 
 
-def startTask():
+def startTask(startIndex):
     driver.delete_all_cookies()
     driver.refresh()
 
-    for i in range(0, sheet.nrows - 1):
+    for i in range(startIndex, sheet.nrows - 1):
 
         usernameStr = sheet.cell(i, 0).value
         # passwordStr = sheet.cell(i, 1).value
         # loginUsernameAndPassword(i)
+        print(f'第{i + 1}行----手机号：{usernameStr}开始换绑')
 
         loginUsernameOfAuthCode(usernameStr)
 
         # driver.switch_to.default_content()
 
-        time.sleep(0.5)
+        time.sleep(1)
 
         window_handles = driver.window_handles
         driver.switch_to.window(window_handles[0])
@@ -161,6 +203,7 @@ def startTask():
         print("打开个人信息")
         img = driver.find_element(By.CLASS_NAME, "usercenter_avatar_img ")
         img.click()
+        # time.sleep(2)
 
         driver.close()
 
@@ -168,6 +211,7 @@ def startTask():
         time.sleep(0.5)
         window_handles = driver.window_handles
         driver.switch_to.window(window_handles[0])
+        WebDriverWait(driver, 20).until_not(EC.visibility_of_element_located((By.ID, 'nocaptcha')))
 
         spans = driver.find_elements(By.TAG_NAME, "span")
 
@@ -205,7 +249,7 @@ def startTask():
                 # time.sleep(5)
                 driver.find_element(By.ID, "J_GetCode").click()
             # yanzhengma111 = input('请输入验证码按回车结束：')
-            authcodeOld = getAuthCode(usernameStr)
+            authcodeOld = getYanzhengAuthCode(usernameStr)
             driver.find_element(By.ID, "J_Phone_Checkcode").send_keys(authcodeOld)
             time.sleep(0.5)
             driver.find_element(By.ID, "submitBtn").click()
@@ -217,19 +261,20 @@ def startTask():
         time.sleep(0.3)
         driver.find_element(By.ID, "J_GetCode").click()
 
-        authcodeNew = getAuthCode(usernameStr)
+        authcodeNew = getNewPhoneAuthCode(phoneStr)
         driver.find_element(By.ID, "J_Phone_Checkcode").send_keys(authcodeNew)
         time.sleep(0.3)
         inputqueding = driver.find_element(By.XPATH, "//input[@class='ui-button ui-button-lorange']")
         inputqueding.click()
-
+        print(f'{usernameStr}换绑为{phoneStr}成功!!!')
         time.sleep(8)
         driver.delete_all_cookies()
-        driver.refresh()
+        driver.get("https://www.youku.com/channel/webhome?spm=a2hcb.collection.app.5~5~5~5~5~5~5~5!2~1~3~A")
 
 
 if __name__ == '__main__':
-    startTask()
+    startTask(14)
+    # getNewPhoneAuthCode('13359938257')
     # authcode = getAuthCode('13249565382')
     # print(authcode)
     # driver.refresh()
