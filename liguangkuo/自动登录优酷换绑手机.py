@@ -184,7 +184,7 @@ def startTask(startIndex):
     driver.delete_all_cookies()
     driver.refresh()
 
-    for i in range(startIndex, sheet.nrows - 1):
+    for i in range(startIndex - 1, sheet.nrows - 1):
 
         usernameStr = sheet.cell(i, 0).value
         # passwordStr = sheet.cell(i, 1).value
@@ -273,7 +273,7 @@ def startTask(startIndex):
 
 
 if __name__ == '__main__':
-    startTask(14)
+    startTask(1)
     # getNewPhoneAuthCode('13359938257')
     # authcode = getAuthCode('13249565382')
     # print(authcode)
