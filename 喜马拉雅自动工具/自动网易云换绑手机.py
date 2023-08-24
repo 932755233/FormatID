@@ -10,6 +10,8 @@ import re
 import xlrd
 import requests
 
+excelPath = r'C:\Users\Danny\Desktop\账号.xls'
+
 # workbook = xlrd.open_workbook('/Users/danny/Desktop/common-documents/工作文档/采购入库/入库的编辑界面.xls')  # 打开Excel
 # workbook = xlrd.open_workbook(r'C:\Users\Danny\Desktop\common-documents\工作文档\采购入库\入库的编辑界面.xls')  # 打开Excel
 
@@ -27,16 +29,16 @@ driver.switch_to.window(window_handles[0])
 print(driver.title)
 
 # 配置
-# startIndex = 1
+startIndex = 1
 authCodeCh = 10
 
 # 解析excel表格
 
-
-workbook = xlrd.open_workbook(r'C:\Users\Danny\Desktop\测试.xls')  # 打开Excel
+workbook = xlrd.open_workbook(excelPath)  # 打开Excel
 sheet = workbook.sheets()[0]
 rows = sheet.nrows
 print(f"一共{rows}个手机号")
+
 username = ord('A')
 
 password = ord('B') - username
@@ -68,17 +70,17 @@ def getNewPhoneAuthCode(phone):
     authcodecc = ''
     for i in range(authCodeCh):
         time.sleep(1)
-        response = requestNet('http://sms.szfangmm.com:3000/api/smslist?token=Go6ifqmfcbKqW39g77kkZQ')
+        response = requestNet('http://sms.szfangmm.com:3000/api/smslist?token=UaoKiHcARvzuEvmSYJSa6c')
         jsons = response.json()
         for json in jsons:
             content = json['content']
-            if ('网易云音乐' in content) & (phone[-4:] == json['simnum'][-4:]):
+            if ('网易云音乐' in content) & ('验证码' in content) & (phone[-4:] == json['simnum'][-4:]):
                 # pattern = re.compile(r'[1-9]\d*', )
                 # authcodecc =  pattern.search(content)
-                authcodecc = re.search(r'[1-9]\d*', content).group()
-                print('查找到最近验证码:' + authcodecc)
+                authcodecc = '0000' + str(re.search(r'[1-9]\d*', content).group())
+                print('查找到最近验证码:' + authcodecc[-4:])
+                return authcodecc[-4:]
 
-                return authcodecc
     if authcodecc == '':
         return input('请手动输入验证码：')
 
@@ -90,14 +92,14 @@ def getYanzhengAuthCode(phone):
     authcodecc = ''
     for i in range(authCodeCh):
         time.sleep(1)
-        response = requestNet('http://sms.szfangmm.com:3000/api/smslist?token=Go6ifqmfcbKqW39g77kkZQ')
+        response = requestNet('http://sms.szfangmm.com:3000/api/smslist?token=cSuZgpUdwXxqWDCypT7kWB')
         jsons = response.json()
         for json in jsons:
             content = json['content']
-            if ('网易云音乐' in content) & (phone[-4:] == json['simnum'][-4:]):
-                authcodecc = re.search(r'[1-9]\d*', content).group()
-                print('查找到最近验证码:' + authcodecc)
-                return authcodecc
+            if ('网易云音乐' in content) & ('验证码' in content) & (phone[-4:] == json['simnum'][-4:]):
+                authcodecc = '0000'+str(re.search(r'[1-9]\d*', content).group())
+                print('查找到最近验证码:' + authcodecc[-4:])
+                return authcodecc[-4:]
     if authcodecc == '':
         return input('请手动输入验证码：')
 
@@ -109,15 +111,16 @@ def getAuthCode(phone):
     authcodecc = ''
     for i in range(authCodeCh):
         time.sleep(1)
-        response = requestNet('http://sms.szfangmm.com:3000/api/smslist?token=Go6ifqmfcbKqW39g77kkZQ')
+        response = requestNet('http://sms.szfangmm.com:3000/api/smslist?token=cSuZgpUdwXxqWDCypT7kWB')
         jsons = response.json()
         for json in jsons:
             content = json['content']
 
-            if ('网易' in content) & (phone[-4:] == json['simnum'][-4:]):
-                authcodecc = re.search(r'[1-9]\d*', content).group()
-                print('查找到最近验证码:' + authcodecc)
-                return authcodecc
+            if ('网易' in content) & ('验证码' in content) & (phone[-4:] == json['simnum'][-4:]):
+                authcodecc ='0000'+ str(re.search(r'[1-9]\d*', content).group())
+
+                print('查找到最近验证码:' + authcodecc[-6:])
+                return authcodecc[-6:]
     if authcodecc == '':
         return input('请手动输入验证码：')
 
@@ -130,26 +133,15 @@ def loginUsernameOfAuthCode(usernameStr):
     # 打开登录
     openDenglu = driver.find_element(By.LINK_TEXT, "登录")
     openDenglu.click()
-    time.sleep(1)
-    duanxindenlgu = driver.find_element(By.ID, "TANGRAM__PSP_11__changeSmsCodeItem")
-    duanxindenlgu.click()
     time.sleep(0.5)
+    qitadenglu = driver.find_element(By.LINK_TEXT, "选择其他登录模式")
+    qitadenglu.click()
+    time.sleep(0.5)
+    inputC = driver.find_element(By.ID, "j-official-terms")
+    driver.execute_script('arguments[0].click()', inputC)
 
-    driver.find_element(By.ID, 'TANGRAM__PSP_11__smsPhone').clear()
-    driver.find_element(By.ID, 'TANGRAM__PSP_11__smsPhone').send_keys(usernameStr)
-
-    driver.find_element(By.ID, 'TANGRAM__PSP_11__smsTimer').click()
-
-    authCodeStr = getAuthCode(usernameStr)
-
-    driver.find_element(By.ID, 'TANGRAM__PSP_11__smsVerifyCode').send_keys(authCodeStr)
-    driver.find_element(By.ID, 'TANGRAM__PSP_11__smsSubmit').click()
-
-    # inputC = driver.find_element(By.ID, "j-official-terms")
-    # driver.execute_script('arguments[0].click()', inputC)
-    #
-    # shoujihao = driver.find_element(By.LINK_TEXT, "手机号登录/注册")
-    # shoujihao.click()
+    shoujihao = driver.find_element(By.LINK_TEXT, "手机号登录/注册")
+    shoujihao.click()
 
     # iframe = driver.find_element(By.ID, 'alibaba-login-box')
     # driver.switch_to.frame(iframe)
@@ -157,83 +149,91 @@ def loginUsernameOfAuthCode(usernameStr):
     # amimadenglu = driver.find_element(By.CLASS_NAME, "yk-login-title")
     # amimadenglu = driver.find_element(By.XPATH, "//a[@class='yk-login-title']")
     # amimadenglu.click()
-    # iframe = driver.find_element(By.ID, 'captcha-login-box').find_element(By.TAG_NAME, 'iframe')
-    # driver.switch_to.frame(iframe)
+    iframe = driver.find_element(By.ID, 'captcha-login-box').find_element(By.TAG_NAME, 'iframe')
+    driver.switch_to.frame(iframe)
     # iframes =driver.find_elements(By.TAG_NAME,'iframe')
     # for iframe in iframes:
     #     if 'x-URS-iframe' in iframe[id]:
 
-    # driver.find_element(By.ID, "phoneipt").clear()
-    # driver.find_element(By.ID, "phoneipt").send_keys(usernameStr)
+    driver.find_element(By.ID, "phoneipt").clear()
+    driver.find_element(By.ID, "phoneipt").send_keys(usernameStr)
 
     # 点击发送验证码
-    # driver.find_element(By.LINK_TEXT, '获取验证码').click()
+    driver.find_element(By.LINK_TEXT, '获取验证码').click()
     # 获取验证码输入
-    # authCodeStr = getAuthCode(usernameStr)
-    # driver.find_element(By.XPATH, "//input[@placeholder='请输入短信验证码']").send_keys(authCodeStr)
+    authCodeStr = getAuthCode(usernameStr)
+    driver.find_element(By.XPATH, "//input[@placeholder='请输入短信验证码']").send_keys(authCodeStr)
 
-    # driver.find_element(By.LINK_TEXT, "登录").click()
+    driver.find_element(By.LINK_TEXT, "登录").click()
 
     print(f"验证码登陆成功---{usernameStr}")
 
 
 def openHuanBang(usernameOld):
-
-    print('打开百度账号设置 -> 换绑手机')
-    driver.get('https://passport.baidu.com/v6/ucenter')
+    print('打开个人设置 -> 绑定设置')
+    driver.get('https://music.163.com/#/user/binding/m/list')
     driver.refresh()
 
-    # try:
-    #     print('等待绑定设置正常显示')
-    #     WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.LINK_TEXT, '修改')))
-    # except:
-    #     print('没有找到元素')
-    # finally:
+    try:
+        print('等待绑定设置正常显示')
+        # WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.CLASS_NAME, 'topban')))
+        time.sleep(2)
+    except:
+        print('没有找到元素')
+        # exit()
+    finally:
 
-    window_handles = driver.window_handles
-    driver.switch_to.window(window_handles[0])
+        window_handles = driver.window_handles
+        driver.switch_to.window(window_handles[0])
 
-    pcmenus = driver.find_elements(By.CLASS_NAME, 'pc-menu')
-    if len(pcmenus) == 0:
-        print('登录失败！')
-        exit()
+        iframe = driver.find_element(By.ID, 'g_iframe')
+        driver.switch_to.frame(iframe)
 
-    driver.find_elements(By.CLASS_NAME, 'pc-menu')[2].click()
+        xiugai = driver.find_elements(By.LINK_TEXT, '修改')
+        if len(xiugai) == 0:
+            return 0
 
-    driver.find_elements(By.CLASS_NAME, 'pass-bind-button')[0].click()
+        driver.find_element(By.LINK_TEXT, '修改').click()
 
-    selects = driver.find_elements(By.ID, 'TANGRAM__2__content_type_select')
-
-    if len(selects) != 0:
-        # 可能需要旧手机号的验证码
-        print('有元素')
-        driver.find_element(By.ID, 'TANGRAM__2__button_send_mobile').click()
+        driver.find_element(By.CLASS_NAME, 'f-fr').click()
+        # print(f'等待获取旧手机号{usernameOld}验证码')
         authCodeOld = getYanzhengAuthCode(usernameOld)
-        driver.find_element(By.ID, 'TANGRAM__2__input_vcode').send_keys(authCodeOld)
-        driver.find_element(By.ID, 'TANGRAM__2__button_submit').click()
+        # authCodeOld = '4567'
+        # print(f'得到验证码{authCodeOld}')
+
+        words = driver.find_elements(By.CLASS_NAME, 'u-word');
+        i = 0
+        for word in words:
+            word.find_element(By.TAG_NAME, 'input').send_keys(authCodeOld[i])
+            i += 1
+        print('验证码输入成功')
+        driver.find_element(By.CLASS_NAME, 'js-next').click()
 
 
 def bangDingNewPhone():
-    # 输入新手机号
-    newPhoneStr = input('请输入新手机号：')
-    driver.find_element(By.ID, 'TANGRAM__1__input_mobile').send_keys(newPhoneStr)
-    driver.find_element(By.ID, 'TANGRAM__1__button_send').click()
+    newPhoneStr = input("请输入新手机号：")
+    driver.find_element(By.CLASS_NAME, 'j-phone').send_keys(newPhoneStr)
+    driver.find_element(By.CLASS_NAME, 'js-send').click()
     print(f'开始等待{newPhoneStr}的验证码')
-    authCodeNewStr = getNewPhoneAuthCode(newPhoneStr)
-    print(f'验证码为{authCodeNewStr}')
-    driver.find_element(By.ID, 'TANGRAM__1__input_vcode').send_keys(authCodeNewStr)
-    driver.find_element(By.ID, 'TANGRAM__1__button_submit').click()
-
+    newAuthCode = getNewPhoneAuthCode(newPhoneStr)
+    print(f'验证码为{newAuthCode}')
+    driver.find_element(By.XPATH, "//input[@placeholder='请输入验证码']").send_keys(newAuthCode)
+    driver.find_element(By.CLASS_NAME, 'js-next').click()
     return newPhoneStr
 
 
 def startTask(startIndex):
     for i in range(startIndex - 1, sheet.nrows):
+        driver.get("https://music.163.com/#")
         driver.delete_all_cookies()
-        driver.get("https://wenku.baidu.com/")
+        # driver.execute_script('window.localStorage.clear();')
+        # driver.execute_script('window.sessionStorage.clear();')
+        # driver.execute_script('document.body.innerHTML="";')
+        # driver.execute_script('window.location.reload();')
+        # time.sleep(1)
         driver.refresh()
 
-        usernameStr = sheet.cell(i, 0).value
+        usernameStr = str(int(sheet.cell(i, 0).value))
         # passwordStr = sheet.cell(i, 1).value
         # loginUsernameAndPassword(i)
         print(f'第{i + 1}行----手机号：{usernameStr}----更换绑定开始！')
@@ -242,23 +242,22 @@ def startTask(startIndex):
 
         time.sleep(1)
 
-        openHuanBang(usernameStr)
+        tempGoOn = openHuanBang(usernameStr)
+        if tempGoOn == 0:
+            tempyn = input(f'当前手机号{usernameStr}登录出现问题！是否继续下一个y/n:')
+            if tempyn == 'y':
+                continue
+            else:
+                exit()
+        else:
+            time.sleep(0.5)
 
-        time.sleep(1)
+            newPhoneStr = bangDingNewPhone()
 
-        newPhoneStr = bangDingNewPhone()
-        # newPhoneStr = '1231'
-
-        print(f'{usernameStr}换绑为{newPhoneStr}成功!!!')
-
-        tempText = driver.find_elements(By.CLASS_NAME, 'pass-bind-button')[1].text
-        if '开启手机' in tempText:
-            print(f'警告！！！手机号{newPhoneStr}需要手动打开手机号登录！！！')
-            tempBool = input('是否继续运行脚本y/n：')
-            if tempBool != 'y':
-                return
-
-        time.sleep(5)
+            print(f'第{i + 1}行----{usernameStr}换绑为{newPhoneStr}成功!!!')
+            print()
+            print()
+            time.sleep(1)
 
         # WebDriverWait(driver, 20).until_not(EC.visibility_of_element_located((By.ID, 'nocaptcha')))
 
@@ -280,17 +279,7 @@ def startTask(startIndex):
         # time.sleep(0.5)
         # driver.find_element(By.ID, "submitBtn").click()
 
-
+# 主函数
 if __name__ == '__main__':
-    startTask(1)
-    # getNewPhoneAuthCode('13359938257')
-    # authcode = getAuthCode('13249565382')
-    # print(authcode)
-    # driver.refresh()
-    # driver.delete_all_cookies()
-
-    # driver.delete_all_cookies()
-    # driver.refresh()
-    # loginUsernameOfAuthCode('13211247332')
-    # openHuanBang('15811436391')
-    # bangDingNewPhone()
+    index = input('从第几行开始：')
+    startTask(int(index))

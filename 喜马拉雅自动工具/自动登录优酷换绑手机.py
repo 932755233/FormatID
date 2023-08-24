@@ -10,14 +10,17 @@ import re
 import xlrd
 import requests
 
+excelPath = r'C:\Users\Danny\Desktop\账号123.xls'
+
 # workbook = xlrd.open_workbook('/Users/danny/Desktop/common-documents/工作文档/采购入库/入库的编辑界面.xls')  # 打开Excel
 # workbook = xlrd.open_workbook(r'C:\Users\Danny\Desktop\common-documents\工作文档\采购入库\入库的编辑界面.xls')  # 打开Excel
 
 chrome_options = Options()
+# chrome_options.add_argument('--incognito')
 chrome_options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
 chrome_driver = r"C:\Users\Danny\Downloads\chromedriver_win32 (1)\chromedriver.exe"
+# driver = webdriver.Chrome(options=chrome_options)
 driver = webdriver.Chrome(options=chrome_options)
-# driver = webdriver.Chrome()
 
 driver.get("https://www.youku.com/channel/webhome?spm=a2hcb.collection.app.5~5~5~5~5~5~5~5!2~1~3~A")
 
@@ -34,10 +37,11 @@ authCodeCh = 10
 # 解析excel表格
 
 
-workbook = xlrd.open_workbook(r'C:\Users\Danny\Desktop\账号.xls')  # 打开Excel
+workbook = xlrd.open_workbook(excelPath)  # 打开Excel
 sheet = workbook.sheets()[0]
 rows = sheet.nrows
 print(f"一共{rows}个手机号")
+
 username = ord('A')
 
 password = ord('B') - username
@@ -69,14 +73,14 @@ def getNewPhoneAuthCode(phone):
     authcodecc = ''
     for i in range(authCodeCh):
         time.sleep(1)
-        response = requestNet('http://sms.szfangmm.com:3000/api/smslist?token=Go6ifqmfcbKqW39g77kkZQ')
+        response = requestNet('http://sms.szfangmm.com:3000/api/smslist?token=cSuZgpUdwXxqWDCypT7kWB')
         jsons = response.json()
         for json in jsons:
             content = json['content']
             if ('优酷土豆' in content) & (phone[-4:] == json['simnum'][-4:]):
                 # pattern = re.compile(r'[1-9]\d*', )
                 # authcodecc =  pattern.search(content)
-                authcodecc = re.search(r'[1-9]\d*', content).group()
+                authcodecc = ('0000'+str(re.search(r'[1-9]\d*', content).group()))[-6:]
                 print('查找到最近验证码:' + authcodecc)
 
                 return authcodecc
@@ -91,12 +95,12 @@ def getYanzhengAuthCode(phone):
     authcodecc = ''
     for i in range(authCodeCh):
         time.sleep(1)
-        response = requestNet('http://sms.szfangmm.com:3000/api/smslist?token=AeDuGbHvvMfBJ6WmebJptf')
+        response = requestNet('http://sms.szfangmm.com:3000/api/smslist?token=Hzri6aRhxM5eMoyyuXW293')
         jsons = response.json()
         for json in jsons:
             content = json['content']
-            if ('优酷土豆' in content) & (phone[-4:] == json['simnum'][-4:]):
-                authcodecc = re.search(r'[1-9]\d*', content).group()
+            if ('优酷土豆】您正在进行修改手机' in content) & (phone[-4:] == json['simnum'][-4:]):
+                authcodecc = ('0000'+str(re.search(r'[1-9]\d*', content).group()))[-6:]
                 print('查找到最近验证码:' + authcodecc)
                 return authcodecc
     if authcodecc == '':
@@ -110,13 +114,13 @@ def getAuthCode(phone):
     authcodecc = ''
     for i in range(authCodeCh):
         time.sleep(1)
-        response = requestNet('http://sms.szfangmm.com:3000/api/smslist?token=AeDuGbHvvMfBJ6WmebJptf')
+        response = requestNet('http://sms.szfangmm.com:3000/api/smslist?token=Hzri6aRhxM5eMoyyuXW293')
         jsons = response.json()
         for json in jsons:
             content = json['content']
 
             if ('优酷土豆' in content) & (phone[-4:] == json['simnum'][-4:]):
-                authcodecc = re.search(r'[1-9]\d*', content).group()
+                authcodecc = ('0000'+str(re.search(r'[1-9]\d*', content).group()))[-6:]
                 print('查找到最近验证码:' + authcodecc)
                 return authcodecc
     if authcodecc == '':
@@ -181,12 +185,16 @@ def loginUsernameAndPassword(usernameStr, passwordStr):
 
 
 def startTask(startIndex):
-    driver.delete_all_cookies()
-    driver.refresh()
 
-    for i in range(startIndex - 1, sheet.nrows - 1):
+    n = 0
 
-        usernameStr = sheet.cell(i, 0).value
+    for i in range(startIndex - 1, sheet.nrows):
+
+        driver.delete_all_cookies()
+        driver.get("https://www.youku.com/channel/webhome?spm=a2hcb.collection.app.5~5~5~5~5~5~5~5!2~1~3~A")
+        driver.refresh()
+
+        usernameStr = str(int(sheet.cell(i, 0).value))
         # passwordStr = sheet.cell(i, 1).value
         # loginUsernameAndPassword(i)
         print(f'第{i + 1}行----手机号：{usernameStr}开始换绑')
@@ -267,16 +275,16 @@ def startTask(startIndex):
         inputqueding = driver.find_element(By.XPATH, "//input[@class='ui-button ui-button-lorange']")
         inputqueding.click()
         print(f'{usernameStr}换绑为{phoneStr}成功!!!')
-        time.sleep(8)
-        driver.delete_all_cookies()
-        driver.get("https://www.youku.com/channel/webhome?spm=a2hcb.collection.app.5~5~5~5~5~5~5~5!2~1~3~A")
+        print()
+        print()
+        # n+=1
+        # if n ==6:
+        #     driver.close()
+        #     exit()
+        time.sleep(3)
 
 
 if __name__ == '__main__':
-    startTask(1)
-    # getNewPhoneAuthCode('13359938257')
-    # authcode = getAuthCode('13249565382')
-    # print(authcode)
-    # driver.refresh()
-    # driver.delete_all_cookies()
-    # loginUsernameOfAuthCode(1)
+
+    index = input('从第几行开始：')
+    startTask(int(index))
