@@ -9,14 +9,17 @@ import re
 
 import xlrd
 import requests
-from authcodeutils import AuthCodeUtils
+from AuthCodeUtils import AuthCodeUtils
 
 
 class WangYiAuto:
     tokens = ['cSuZgpUdwXxqWDCypT7kWB',
+              'AeDuGbHvvMfBJ6WmebJptf',
               'Go6ifqmfcbKqW39g77kkZQ',
               'Hzri6aRhxM5eMoyyuXW293',
               'EsnEbw4cj8SjNEnxiyZVzE',
+              'cjPUXdTtiYGCJj8qHLqVzi',
+              'NaxhLGzQa6v5aV3n9w4FXN',
               'ATCd4fakvTSzzovJfjcRGJ',
               '95LUogpdxV2k9FnYpdWBcG',
               'UaoKiHcARvzuEvmSYJSa6c']
@@ -41,7 +44,9 @@ class WangYiAuto:
         self.checkUrl = 'https://m.you.163.com/coupon'
 
         self.chrome_options = Options()
-        self.chrome_options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
+        self. chrome_options.add_argument('--incognito')
+
+        # self.chrome_options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
         self.driver = webdriver.Chrome(options=self.chrome_options)
 
     def requestNet(self, url, proxies=None):
@@ -56,15 +61,22 @@ class WangYiAuto:
             for token in self.tokens:
                 response = self.requestNet(f'http://sms.szfangmm.com:3000/api/smslist?token={token}')
                 # print(response)
-                jsons = response.json()
-                for json in jsons:
-                    content = json['content']
-                    if ('网易' in content) & ('验证码' in content) & (phone[-4:] == json['simnum'][-4:]):
-                        authcodecc = '0000' + str(re.search(r'[1-9]\d*', content).group())
-                        # print('查找到最近验证码:' + authcodecc[-6:])
-                        bean['code'] = authcodecc[-6:]
-                        bean['token'] = token
-                        return bean
+                if response.status_code == 200:
+                    try:
+                        jsons = response.json()
+                        for json in jsons:
+                            content = json['content']
+                            if ('网易' in content) & ('验证码' in content) & (phone[-4:] == json['simnum'][-4:]):
+                                authcodecc = '0000' + str(re.search(r'[1-9]\d*', content).group())
+                                # print('查找到最近验证码:' + authcodecc[-6:])
+                                bean['code'] = authcodecc[-6:]
+                                bean['token'] = token
+                                return bean
+                    except:
+                        print(response.text)
+                        print(token)
+                else:
+                    print(f'链接失败token：{token}')
         return bean
         # if authcodecc == '':
         #     return input('请手动输入验证码：')
@@ -79,6 +91,7 @@ class WangYiAuto:
     def getGood(self):
         self.driver.get(self.getGoodUrl)
         self.driver.find_element(By.CLASS_NAME, 'u-ADAB8E-button-image').click()
+        time.sleep(2)
 
     def loginWangYi(self, phone):
         self.driver.get(self.loginUrl)
@@ -153,7 +166,7 @@ class WangYiAuto:
 
 if __name__ == '__main__':
     auto = WangYiAuto()
-    auto.startTask(1)
+    auto.startTask(20)
     # ssss = auto.getAuthCode('15687863187')
     # print(ssss)
 

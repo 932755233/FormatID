@@ -10,15 +10,19 @@ import re
 import xlrd
 import requests
 
-excelPath = r'C:\Users\Danny\Desktop\账号123.xls'
+excelPath = r'C:\Users\Danny\Desktop\20230827优酷网易云换绑.xls'
 
 # workbook = xlrd.open_workbook('/Users/danny/Desktop/common-documents/工作文档/采购入库/入库的编辑界面.xls')  # 打开Excel
 # workbook = xlrd.open_workbook(r'C:\Users\Danny\Desktop\common-documents\工作文档\采购入库\入库的编辑界面.xls')  # 打开Excel
 
 chrome_options = Options()
 # chrome_options.add_argument('--incognito')
+# chrome_options.add_argument('--incognito')
+# chrome_options.add_experimental_option('excludeSwitches', ['enable-automation'])
+# chrome_options.add_experimental_option('useAutomationExtension', False)
+# chrome_options.add_argument('blink-settings=imagesEnabled=false')
 chrome_options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
-chrome_driver = r"C:\Users\Danny\Downloads\chromedriver_win32 (1)\chromedriver.exe"
+# chrome_driver = r"C:\Users\Danny\Downloads\chromedriver_win32 (1)\chromedriver.exe"
 # driver = webdriver.Chrome(options=chrome_options)
 driver = webdriver.Chrome(options=chrome_options)
 
@@ -95,7 +99,7 @@ def getYanzhengAuthCode(phone):
     authcodecc = ''
     for i in range(authCodeCh):
         time.sleep(1)
-        response = requestNet('http://sms.szfangmm.com:3000/api/smslist?token=Hzri6aRhxM5eMoyyuXW293')
+        response = requestNet('http://sms.szfangmm.com:3000/api/smslist?token=ATCd4fakvTSzzovJfjcRGJ')
         jsons = response.json()
         for json in jsons:
             content = json['content']
@@ -114,7 +118,7 @@ def getAuthCode(phone):
     authcodecc = ''
     for i in range(authCodeCh):
         time.sleep(1)
-        response = requestNet('http://sms.szfangmm.com:3000/api/smslist?token=Hzri6aRhxM5eMoyyuXW293')
+        response = requestNet('http://sms.szfangmm.com:3000/api/smslist?token=ATCd4fakvTSzzovJfjcRGJ')
         jsons = response.json()
         for json in jsons:
             content = json['content']
@@ -263,13 +267,14 @@ def startTask(startIndex):
             driver.find_element(By.ID, "submitBtn").click()
         except:
             print('已经验证身份')
-
-        phoneStr = input('请输入手机号按回车结束：')
+        exit()
+        phoneStr = input('请输入手机号：')
         driver.find_element(By.ID, "J_Mobile").send_keys(phoneStr)
         time.sleep(0.3)
         driver.find_element(By.ID, "J_GetCode").click()
 
-        authcodeNew = getNewPhoneAuthCode(phoneStr)
+        # authcodeNew = getNewPhoneAuthCode(phoneStr)
+        authcodeNew = input('请输入验证码：')
         driver.find_element(By.ID, "J_Phone_Checkcode").send_keys(authcodeNew)
         time.sleep(0.3)
         inputqueding = driver.find_element(By.XPATH, "//input[@class='ui-button ui-button-lorange']")
@@ -277,6 +282,7 @@ def startTask(startIndex):
         print(f'{usernameStr}换绑为{phoneStr}成功!!!')
         print()
         print()
+        exit()
         # n+=1
         # if n ==6:
         #     driver.close()
