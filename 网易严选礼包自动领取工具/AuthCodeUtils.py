@@ -72,3 +72,44 @@ class AuthCodeUtils:
                 bean['message'] = '网络链接失败！'
                 bean['code'] = '网络链接失败！'
         return bean
+
+    def getAuthCodeForTag(self, phone, tag):
+        # print(f'等待查询{phone}的验证码')
+        # sendCodeTimeLong = time.time()
+        # timettt = input('请输入:')
+        # sendCodeTimeLong = time.mktime(time.strptime(timettt, "%Y-%m-%d %H:%M:%S"))
+        # time.sleep(5)
+        bean = {'token': '未找到', 'code': '未找到', 'phone': phone, 'status': '0', 'time': '未找到'}
+        # for i in range(10):
+        #     time.sleep(1)
+        for token in self.tokens:
+            response = self.requestNet(f'http://sms.szfangmm.com:3000/api/smslist?token={token}')
+            # print(response)
+            if response.status_code == 200:
+                # try:
+                jsons = response.json()
+                for json in jsons:
+                    # print(json)
+                    content = json['content']
+                    # 获得列表中的发送时间
+                    # oldSendTime = json['time']
+                    # oldSendTimeLong = time.mktime(time.strptime(oldSendTime, "%Y-%m-%d %H:%M:%S"))
+                    # if oldSendTimeLong < sendCodeTimeLong:
+                    #     print(f'{oldSendTime}----{oldSendTimeLong}')
+                    #     break
+                    if (tag in content) & ('验证码' in content) & (phone[-4:] == json['simnum'][-4:]):
+                        authcodecc = '0000' + str(re.search(r'[1-9]\d*', content).group())
+                        # print('查找到最近验证码:' + authcodecc[-6:])
+                        bean['code'] = authcodecc[-6:]
+                        bean['token'] = token
+                        bean['status'] = '1'
+                        bean['time'] = json['time']
+                        return bean
+            # except:
+            #     print(response.text)
+            #     print(token)
+            else:
+                bean['status'] = '0'
+                bean['message'] = '网络链接失败！'
+                bean['code'] = '网络链接失败！'
+        return bean

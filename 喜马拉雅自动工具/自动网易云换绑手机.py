@@ -101,7 +101,7 @@ def getYanzhengAuthCode(phone):
         for json in jsons:
             content = json['content']
             if ('网易云音乐' in content) & ('验证码' in content) & (phone[-4:] == json['simnum'][-4:]):
-                authcodecc = '0000'+str(re.search(r'[1-9]\d*', content).group())
+                authcodecc = '0000' + str(re.search(r'[1-9]\d*', content).group())
                 print('查找到最近验证码:' + authcodecc[-4:])
                 return authcodecc[-4:]
     if authcodecc == '':
@@ -121,7 +121,7 @@ def getAuthCode(phone):
             content = json['content']
 
             if ('网易' in content) & ('验证码' in content) & (phone[-4:] == json['simnum'][-4:]):
-                authcodecc ='0000'+ str(re.search(r'[1-9]\d*', content).group())
+                authcodecc = '0000' + str(re.search(r'[1-9]\d*', content).group())
 
                 print('查找到最近验证码:' + authcodecc[-6:])
                 return authcodecc[-6:]
@@ -286,6 +286,7 @@ def startTask(startIndex):
         # driver.find_element(By.ID, "J_Phone_Checkcode").send_keys(authcodeOld)
         # time.sleep(0.5)
         # driver.find_element(By.ID, "submitBtn").click()
+
 
 # 主函数
 if __name__ == '__main__':
