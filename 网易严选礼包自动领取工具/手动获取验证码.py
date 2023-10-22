@@ -13,35 +13,53 @@ class MainWindow:
     # D:\develop\Python\Python38\Scripts\pyinstaller 手动获取验证码.py - Fw
 
     def __init__(self):
-        self.config = 'config.csv'
+        self.config = './config.csv'
         self.beans = []
         self.workThread = None
         self.authCodeUtils = AuthCodeUtils()
         self.ui = QUiLoader().load('shoudonghuoqu.ui')
         self.ui.pbStartGetCode.clicked.connect(self.startGetAuthCode)
+        self.ui.te_url.setFont(QFont("宋体", 12))
         self.ui.pteTokenList.setFont(QFont("宋体", 12))
         self.ui.ptePhoneList.setFont(QFont("宋体", 12))
         self.ui.teResult.setFont(QFont("宋体", 12))
         self.ui.teOther.setFont(QFont("宋体", 12))
         self.ui.teResult.setReadOnly(True)
         self.ui.teOther.setReadOnly(True)
-        for token in self.authCodeUtils.tokens:
-            self.ui.pteTokenList.insertPlainText(f'{token}\n')
         with open(self.config, 'r') as csvfile:
             reader = csv.reader(csvfile)
-            self.authCodeUtils.headers = reader[0]
+            print('这里走了1111')
+            tempRea = list(reader)
+            if len(tempRea) > 0:
+                self.authCodeUtils.tokens = tempRea[0]
+                self.authCodeUtils.urlStr = tempRea[1][0]
+            # for i in reader:
+            #     self.authCodeUtils.tokens = i
+            #
+            #     print('这里走了')
+            #     print(i, '这里也走了')
+            # if (len(reader) > 0):
+
+        for token in self.authCodeUtils.tokens:
+            self.ui.pteTokenList.insertPlainText(f'{token}\n')
+        self.ui.te_url.setPlainText(self.authCodeUtils.urlStr)
 
     def close_event(self):
-        with open(self.config, 'w') as csvfile:
+        print('保存tokens')
+        with open(self.config, 'w',newline='') as csvfile:
             writer = csv.writer(csvfile)
-            writer.writerow(self.authCodeUtils.headers)
+            tokens = self.ui.pteTokenList.toPlainText().strip().split('\n')
+            urlStr = self.ui.te_url.toPlainText().strip().split('\n')
+            print(tokens)
+            writer.writerow(tokens)
+            writer.writerow(urlStr)
 
     def startGetAuthCode(self):
         # sss = QPushButton()
         # sss.
         self.ui.pbStartGetCode.text()
         if self.ui.pbStartGetCode.text() == '开始':
-            self.workThread = GetAuthCodeThread(self.ui.ptePhoneList, self.ui.pteTokenList)
+            self.workThread = GetAuthCodeThread(self.ui.ptePhoneList, self.ui.pteTokenList, self.ui.te_url)
             self.workThread.start()
             self.workThread.signal.connect(self.showAuthCode)
             self.ui.pbStartGetCode.setText('结束')
@@ -135,8 +153,9 @@ class MainWindow:
 class GetAuthCodeThread(QThread):
     signal = Signal(object)
 
-    def __init__(self, ptePhoneList, pteTokenList):
+    def __init__(self, ptePhoneList, pteTokenList, te_url):
         super(GetAuthCodeThread, self).__init__()
+        self.te_url = te_url
         self.ptePhoneList = ptePhoneList
         self.pteTokenList = pteTokenList
         self.authCodeUtils = AuthCodeUtils()
@@ -150,12 +169,17 @@ class GetAuthCodeThread(QThread):
     def run(self) -> None:
         while True:
             time.sleep(1)
+            urlStr = self.te_url.toPlainText().strip()
+            self.authCodeUtils.urlStr = urlStr
+
             tokens = self.pteTokenList.toPlainText().split('\n')
             self.authCodeUtils.tokens = tokens
 
             phoneStrs = self.ptePhoneList.toPlainText().split('\n')
 
+            print('开始', phoneStrs)
             beans = []
+            print(self.authCodeUtils.tokens)
             for phoneStr in phoneStrs:
                 if phoneStr != '':
                     bean = self.authCodeUtils.getAuthCode(phoneStr.strip())

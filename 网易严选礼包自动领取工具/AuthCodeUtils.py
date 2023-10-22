@@ -8,6 +8,8 @@ class AuthCodeUtils:
     def __init__(self):
         self.sss = ''
 
+    urlStr = 'http://sms.szfangmm.com:3000/api/smslist?token='
+
     tokens = ['cSuZgpUdwXxqWDCypT7kWB',
               'AeDuGbHvvMfBJ6WmebJptf',
               'Go6ifqmfcbKqW39g77kkZQ',
@@ -42,7 +44,7 @@ class AuthCodeUtils:
         # for i in range(10):
         #     time.sleep(1)
         for token in self.tokens:
-            response = self.requestNet(f'http://sms.szfangmm.com:3000/api/smslist?token={token}')
+            response = self.requestNet(self.urlStr + token)
             # print(response)
             if response.status_code == 200:
                 # try:
@@ -62,7 +64,8 @@ class AuthCodeUtils:
                         bean['code'] = authcodecc[-6:]
                         bean['token'] = token
                         bean['status'] = '1'
-                        bean['time'] = json['time']
+                        # bean['time'] = json['time']
+                        bean['time'] = '无时间'
                         return bean
             # except:
             #     print(response.text)
@@ -83,7 +86,7 @@ class AuthCodeUtils:
         # for i in range(10):
         #     time.sleep(1)
         for token in self.tokens:
-            response = self.requestNet(f'http://sms.szfangmm.com:3000/api/smslist?token={token}')
+            response = self.requestNet(self.urlStr + token)
             # print(response)
             if response.status_code == 200:
                 # try:

@@ -17,7 +17,7 @@ def print_hi(name):
 # path = '/Users/danny/Desktop/petshop/centre/src/main/res/layout/layout_custinfosupple_company_info.xml'
 # path = 'G:\\work\\petshop\\centre\\src\\main\\res\\layout\\item_gift_pur_req_bill_list.xml'
 # path = '/Users/danny/Desktop/petshop/centre/src/main/res/layout/item_purchase_order_list.xml'
-path = 'G:\\work\\petshop\\centre\\src\\main\\res\\layout\\layout_customer_price_change_add_and_details.xml'
+path = 'G:\\work\\petshop\\centre\\src\\main\\res\\layout\\item_mette_pur_request_bill.xml'
 # path = 'G:\\work\\petshop\\agent\\src\\main\\res\\layout\\layout_product_coding_dispose.xml'
 tempStr = ''
 # with open(path, 'rb') as lines:
@@ -70,10 +70,10 @@ for line in fileinput.input(path, openhook=fileinput.hook_encoded('utf-8')):
 
     if line.find('android:id="@+id/') >= 0:
         temp = line.split('/')[1][:-2]
-        if temp[-3:] == 'red':
+        # if temp[-3:] == 'red':
             # tempStrSS = tempStrSS + '_red'
-            tempStrSS = ''
-            continue
+            # tempStrSS = ''
+            # continue
         if temp[-3:] == 'txt':
             tempStrSS = ''
             continue
