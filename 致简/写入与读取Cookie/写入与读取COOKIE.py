@@ -1,7 +1,10 @@
+import json
+import os
 import time
 import datetime
 import re
 
+import requests
 import selenium
 from PySide2.QtCore import QThread, Signal
 from PySide2.QtGui import QFont, QTextCursor
@@ -29,22 +32,25 @@ class MainWindow:
         self.ui.pushButton.setEnabled(False)
         self.ui.but_input.setEnabled(False)
         self.ui.but_clearCK.setEnabled(False)
+        self.ui.but_tongbu.setEnabled(False)
         # 设置字体
         self.ui.pte_cookie.setFont(QFont("宋体", 12))
         self.ui.pte_log.setFont(QFont("宋体", 12))
+        self.ui.le_account_template.setFont(QFont("宋体", 12))
         # 设置只读
         self.ui.pte_log.setReadOnly(True)
         # 绑定监听事件
         self.ui.but_openBrowser.clicked.connect(self.openBrowser)
 
-
         self.ui.pushButton.clicked.connect(self.tiquCookie)
         self.ui.but_input.clicked.connect(self.inputCookie)
         self.ui.but_clearCK.clicked.connect(self.clearCookie)
+        self.ui.but_tongbu.clicked.connect(self.uploadAccount)
         # self.driver = webdriver.Chrome(self.chrome_potions)
         # self.driver = webdriver.Edge(self.chrome_potions)
         # webdriver.Firefox
         # self.driver.get('http://www.baidu.com')
+        self.ui.le_account_template.setText("无用户名----1----1----1----")
 
     def openBrowser(self):
         print('openBrowser')
@@ -99,6 +105,8 @@ class MainWindow:
         qqq = QPushButton()
         self.ui.pushButton.setEnabled(True)
         self.ui.but_input.setEnabled(True)
+        self.ui.but_clearCK.setEnabled(True)
+        self.ui.but_tongbu.setEnabled(True)
 
     def showLog(self, text):
         print('showLog')
@@ -120,12 +128,12 @@ class MainWindow:
         print('tiquCookie')
         # self.driver.switch_to.window(self.driver.window_handles[0])
         cookies = self.driver.get_cookies()
+        print(cookies)
         cookiestr = ''
         for cookie in cookies:
             cookiestr += cookie['name'] + "=" + cookie['value'] + ';'
         self.ui.pte_cookie.setPlainText(cookiestr)
         self.showLog('获取COOKIE')
-
 
     def inputCookie(self):
         print('inputCookie')
@@ -136,9 +144,15 @@ class MainWindow:
         cookies = cookieStr.strip().split(';')
 
         url = self.driver.current_url
-        pattern = re.compile('[a-zA-z]+://www.([^\s]*)/')
-        print(pattern.search(url).group(1))
-        domain = pattern.search(url).group(1)
+        print(url)
+
+        js_hostname = "return window.location.hostname"
+        hostname = self.driver.execute_script(js_hostname)
+        print("hostname:" + hostname)
+
+        # pattern = re.compile('[a-zA-z]+://www.([^\s]*)/')
+        # print(pattern.search(url).group(1))
+        domain = hostname
         for cookiee in cookies:
             # deng = cookiee.split('=')
             print(cookiee)
@@ -153,9 +167,52 @@ class MainWindow:
         self.driver.refresh()
         self.showLog('写入COOKIE')
 
+    def uploadAccount(self):
+        accountTemplate = self.ui.le_account_template.text()
+        cookieStr = self.ui.pte_cookie.toPlainText()
+        if accountTemplate == '':
+            self.showLog('中间模板不能为空')
+            return
+        if cookieStr == '':
+            self.showLog('COOKIE不能为空')
+            return
+
+        self.showLog('拼接字符串')
+        accountText = accountTemplate + cookieStr
+        self.showLog(accountText)
+
+        os.system('echo %s | clip' % accountText)
+        self.showLog('账号字符串已复制到剪贴板！')
+
+        self.showLog('开始上传账号')
+        self.ui.but_tongbu.setEnabled(False)
+        headers = {
+            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36',
+            # 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+            'accept': 'application/json, text/plain, */*',
+            'accept-encoding': 'gzip, deflate',
+            'accept-language': 'zh-CN,zh;q=0.9',
+            'Content-Type': 'application/json'
+            # 'cookie':'rr=https%3A%2F%2Fcn1.at101.design%2F; iadult=1; hello=1; __cf_bm=p5gOpquFCoj5a8TQG4EXkJgz3Ex7FnsYEfEnocDLOvQ-1672239337-0-Aald4rPN3hah3kmMughmjJnSoAXumWxycfq63F5ZGSO30pHcwtAbqaAZLHGXuYc6q8I0nZgdiJR75WSZ20zsF7Fd02vMkSA7GKGU+aEdw5fSL4rGkP3QLsGEgxf04R5AkhrkKQTrbTGgNWCpGXKzTss=; XSRF-TOKEN=eyJpdiI6ImZObDlvclwvZjN4SnhtMHNyb2NkcTNBPT0iLCJ2YWx1ZSI6InlqNUp4V3dSN2ZucDZYN2h0OExBT2NBMlVFZVpVWXNSUTZuR1NvbVMwMlZhVVJJTDhLNTBnTHIrQUFrNTJJVDIiLCJtYWMiOiI2OGFmNDM5NzE5MDc5ZGFjMTJmODJmYjZkMTVkNWViOGI0YWUyN2JlZjUwZjg2YzEyOTVjZTVjNmZkNmE5NTYzIn0%3D; miao_ss=eyJpdiI6IlZUczhoMFJjN2VhUlRFYis1NXBYZ3c9PSIsInZhbHVlIjoiR2RWRDZncElnemNZa0poTnhGbHNcL1ZoTmlnVDhhNndYcVgxSHFTMCtcL3VnbUVZTXAyWGtCclloaURQR2dwMXVaIiwibWFjIjoiZjBlM2QzZDRjM2FmNzhmZjBmNjliMzgzNGI4NTZiZWEzZmY2MDg5YmJhZDBmNjI5NzJmYzcxMDc0OWNmN2U5YyJ9'
+        }
+
+        formdata = {'data': str(accountText), 'type': '1'}
+
+        # urlStr = 'http://192.168.31.155:8086/AccountExternal/addAccount.do'
+        urlStr = 'http://47.92.2.81:8080/link/AccountExternal/addAccount.do'
+        response = requests.post(urlStr, data=json.dumps(formdata),
+                                 headers=headers)
+        self.showLog('网络响应：' + response.json()['data'])
+        self.ui.but_tongbu.setEnabled(True)
+
+        # self.showLog('上传账号完毕')
+
 
 if __name__ == '__main__':
     app = QApplication([])
     mainWindow = MainWindow()
     mainWindow.ui.show()
     app.exec_()
+
+    # 生成exe可执行文件
+    # D:\develop\Python\Python38\Scripts\pyinstaller 手动获取验证码.py - Fw

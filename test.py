@@ -1,5 +1,6 @@
 import keyword
 import time
+import re
 
 print(keyword.kwlist)
 
@@ -15,3 +16,7 @@ bu0 = ''
 if s < 10:
     bu0 = '0'
 print("%s'%s%s" % (m, bu0, s))
+
+url = "https://www.vipcard.igetget.com/checkout/jointVip/home/000-005-3516815164571756#/jointVip/claimRights?from=third&sku=PSPKG97654701"
+pattern = re.compile('[a-zA-z]+://www.([^\s]*)/')
+print(pattern.search(url).group(1))
