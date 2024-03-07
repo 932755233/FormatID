@@ -29,6 +29,7 @@ class MainWindow:
         self.driver = None
         self.ui = QUiLoader().load('inputandget.ui')
 
+        self.ui.setWindowTitle("写入与读取COOKIE(可改作用域)")
         self.ui.pushButton.setEnabled(False)
         self.ui.but_input.setEnabled(False)
         self.ui.but_clearCK.setEnabled(False)
@@ -37,6 +38,7 @@ class MainWindow:
         self.ui.pte_cookie.setFont(QFont("宋体", 12))
         self.ui.pte_log.setFont(QFont("宋体", 12))
         self.ui.le_account_template.setFont(QFont("宋体", 12))
+        self.ui.le_zuoyongyu.setFont(QFont("宋体", 12))
         # 设置只读
         self.ui.pte_log.setReadOnly(True)
         # 绑定监听事件
@@ -148,6 +150,14 @@ class MainWindow:
 
         js_hostname = "return window.location.hostname"
         hostname = self.driver.execute_script(js_hostname)
+        # hostname = '.qq.com'
+        # hostname = '.video.qq.com'
+
+        zuoyongyuStr = self.ui.le_zuoyongyu.text()
+        print(zuoyongyuStr)
+        if zuoyongyuStr != '':
+            hostname = zuoyongyuStr
+
         print("hostname:" + hostname)
 
         # pattern = re.compile('[a-zA-z]+://www.([^\s]*)/')

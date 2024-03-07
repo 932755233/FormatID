@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>691</width>
+    <height>850</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>691</width>
+    <height>745</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>691</width>
+    <height>850</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>读取或写入COOKIE</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPlainTextEdit" name="pte_cookie">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>501</width>
+      <height>341</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="pte_log">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>420</y>
+      <width>671</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>100</y>
+      <width>161</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>提取Cookie</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="but_input">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>160</y>
+      <width>161</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>写入Cookie</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>630</y>
+      <width>691</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;所有的操作均在第一个标签页！&lt;/p&gt;&lt;p&gt;提取Cookie：提取出来的Cookie会显示在上面的输入框。&lt;/p&gt;&lt;p&gt;写入Cookie：把Cookie复制到上面的输入框，进行写入。&lt;/p&gt;&lt;p&gt;清除Cookie：退出账号登录需要使用清除Cookie按钮，千万不要点击退出账号&lt;/p&gt;&lt;p&gt;作用域：示例.jd.com，前面一定要加点&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::AutoText</enum>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="but_openBrowser">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>50</y>
+      <width>160</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>打开浏览器</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="cb_browserListSelect">
+    <property name="geometry">
+     <rect>
+      <x>521</x>
+      <y>10</y>
+      <width>158</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Edge</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Chrome</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Firefox</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QPushButton" name="but_clearCK">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>220</y>
+      <width>161</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>清除Cookie</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="but_tongbu">
+    <property name="geometry">
+     <rect>
+      <x>521</x>
+      <y>280</y>
+      <width>160</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>上传账号</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="le_account_template">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>360</y>
+      <width>670</width>
+      <height>50</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="le_zuoyongyu">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>770</y>
+      <width>671</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>作用域</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>691</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

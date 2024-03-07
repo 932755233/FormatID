@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>691</width>
-    <height>800</height>
+    <height>850</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -22,7 +22,7 @@
   <property name="maximumSize">
    <size>
     <width>691</width>
-    <height>800</height>
+    <height>850</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -87,11 +87,11 @@
       <x>10</x>
       <y>630</y>
       <width>691</width>
-      <height>121</height>
+      <height>141</height>
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;所有的操作均在第一个标签页！&lt;/p&gt;&lt;p&gt;提取Cookie：提取出来的Cookie会显示在上面的输入框。&lt;/p&gt;&lt;p&gt;写入Cookie：把Cookie复制到上面的输入框，进行写入。&lt;/p&gt;&lt;p&gt;清除Cookie：退出账号登录需要使用清除Cookie按钮，千万不要点击退出账号&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;所有的操作均在第一个标签页！&lt;/p&gt;&lt;p&gt;提取Cookie：提取出来的Cookie会显示在上面的输入框。&lt;/p&gt;&lt;p&gt;写入Cookie：把Cookie复制到上面的输入框，进行写入。&lt;/p&gt;&lt;p&gt;清除Cookie：退出账号登录需要使用清除Cookie按钮，千万不要点击退出账号&lt;/p&gt;&lt;p&gt;作用域：示例.jd.com，前面一定要加点&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="textFormat">
      <enum>Qt::AutoText</enum>
@@ -172,6 +172,19 @@
       <width>670</width>
       <height>50</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="le_zuoyongyu">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>770</y>
+      <width>671</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>作用域</string>
     </property>
    </widget>
   </widget>
