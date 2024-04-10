@@ -20,7 +20,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 now_date = time.strftime("%Y-%m-%d", time.localtime())
 
-proxy = '192.168.3.220:7890'
+proxy = '192.168.5.111:7890'
 proxies = {
     'http': 'http://' + proxy,
     'https': 'http://' + proxy
@@ -44,7 +44,7 @@ javBus = r'https://www.javbus.com'
 
 # javhd101 = r'https://avhd101.com/search?q='
 javhd101 = r'https://avhd101.com/'
-javLibrary = r'https://www.g64w.com/cn/'
+javLibrary = r'https://www.i71t.com/tw/'
 javDB = r'https://javdb.com/'
 
 subtitlePath = r'H:\AV的文件\字幕\7000字幕'
@@ -508,7 +508,7 @@ searchType = 0
 
 
 def doTask():
-    finderPath = r'Y:\LSP\AdultVideo'
+    finderPath = r'X:\LSP\AdultVideo'
     # finderPath = r'Z:\LSP\测试'
     subtitlePath = r'H:\AV的文件\字幕\7000字幕'
     # subtitlePath = r'H:\新建文件夹 (2)\湿巾\字幕\测试'
