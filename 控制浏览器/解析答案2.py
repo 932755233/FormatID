@@ -59,7 +59,7 @@ for div in divs:
                     labelText = psss[0].text
                     if labelText == answer:
                         inputItem = answerItem.find_element_by_tag_name("input")
-                        inputItem.click()
+                        inputItem.doTask()
                         print(answer, "---", labelText)
             else:
                 # 判断题
@@ -67,18 +67,18 @@ for div in divs:
                 r0 = lxmlDiv.xpath('*//div[contains(@class,"r0")]')[0]
                 if 'incorrect' in r0.attrib.get('class'):
                     print('答案：错误')
-                    div.find_element_by_class_name("r1").find_element_by_tag_name("input").click()
+                    div.find_element_by_class_name("r1").find_element_by_tag_name("input").doTask()
                 elif 'correct' in r0.attrib.get('class'):
                     print('答案：正确')
-                    div.find_element_by_class_name("r0").find_element_by_tag_name("input").click()
+                    div.find_element_by_class_name("r0").find_element_by_tag_name("input").doTask()
                 else:
                     r1 = lxmlDiv.xpath('*//div[contains(@class,"r1")]')[0]
                     if 'incorrect' in r0.attrib.get('class'):
                         print('答案：正确')
-                        div.find_element_by_class_name("r0").find_element_by_tag_name("input").click()
+                        div.find_element_by_class_name("r0").find_element_by_tag_name("input").doTask()
                     else:
                         print('答案：错误')
-                        div.find_element_by_class_name("r1").find_element_by_tag_name("input").click()
+                        div.find_element_by_class_name("r1").find_element_by_tag_name("input").doTask()
 
                 # title = lxmlDiv.xpath('*//div[contains(@class,"incorrect")]/i')[0].attrib.get('title')
                 # if '正确' == title:

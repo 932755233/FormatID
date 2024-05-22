@@ -20,3 +20,4 @@ def on_scroll(x, y, x_axis, y_axis):
 with mouse.Listener(on_move=on_move, on_click=on_click, on_scroll=on_scroll) as listener:
     listener.join()
 
+# 运行此py可以获取鼠标在屏幕位置

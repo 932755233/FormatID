@@ -64,5 +64,5 @@ for divv in div:
                 labelText = pitem.text
                 if labelText == answerText:
                     inputItem = answerItem.find_element_by_tag_name("input")
-                    inputItem.click()
+                    inputItem.doTask()
                     print(pText, "---", labelText)

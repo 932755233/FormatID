@@ -65,7 +65,7 @@ for body, answer in zip(bodys, answers):
         span = label.find_element(By.CLASS_NAME, "option-index")
         if span.text == answer:
             print("选择" + answer)
-            label.click()
+            label.doTask()
 
 #
 # chrome_options = Options()

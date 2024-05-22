@@ -28,12 +28,12 @@ kuweiName = '圣牧库' + '-%s库位'
 
 # 打开新增窗口
 mouse.position = (15, 65)
-mouse.click(Button.left, 1)  # 点击鼠标事件
+mouse.doTask(Button.left, 1)  # 点击鼠标事件
 
 time.sleep(0.5)
 # 点击新增窗口的库位名称编辑框
 mouse.position = (1309, 728)
-mouse.click(Button.left, 1)  # 点击鼠标事件
+mouse.doTask(Button.left, 1)  # 点击鼠标事件
 
 time.sleep(0.5)
 for i in range(index):

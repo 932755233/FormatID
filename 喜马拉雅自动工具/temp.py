@@ -156,7 +156,7 @@ def startTask(startIndex):
         time.sleep(2)
         clearButton = driver.execute_script(
             "return document.querySelector('settings-ui').shadowRoot.querySelector('settings-main').shadowRoot.querySelector('settings-basic-page').shadowRoot.querySelector('settings-section > settings-privacy-page').shadowRoot.querySelector('settings-clear-browsing-data-dialog').shadowRoot.querySelector('#clearBrowsingDataDialog').querySelector('#clearBrowsingDataConfirm')")
-        clearButton.click()
+        clearButton.doTask()
         print(f'第{i + 1}行----手机号：{usernameStr}----完成')
         print()
         print()
