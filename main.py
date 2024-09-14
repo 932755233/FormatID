@@ -17,7 +17,9 @@ def print_hi(name):
 # path = '/Users/danny/Desktop/petshop/centre/src/main/res/layout/layout_custinfosupple_company_info.xml'
 # path = 'G:\\work\\petshop\\centre\\src\\main\\res\\layout\\item_gift_pur_req_bill_list.xml'
 # path = '/Users/danny/Desktop/petshop/centre/src/main/res/layout/item_purchase_order_list.xml'
-path = 'G:\\work\\petshop\\centre\\src\\main\\res\\layout\\layout_f_claim_expense_entry_item.xml'
+# path = 'G:\\work\\petshop\\centre\\src\\main\\res\\layout\\layout_f_claim_expense_entry_item.xml'
+# path = r'G:\work\petshop202406\agentgj\src\main\res\layout\activity_main.xml'
+path = r'G:\work\petshop202406\centre\src\main\res\layout\activity_meetingexpense_info.xml'
 # path = 'G:\\work\\petshop\\agent\\src\\main\\res\\layout\\layout_product_coding_dispose.xml'
 tempStr = ''
 # with open(path, 'rb') as lines:
@@ -77,7 +79,7 @@ for line in fileinput.input(path, openhook=fileinput.hook_encoded('utf-8')):
         if temp[-3:] == 'txt':
             tempStrSS = ''
             continue
-        print('@ViewById(R.id.%s)' % temp)
+        print('@ViewById')
         print('TextView %s;//%s' % (temp, tempStrSS))
     if line.find('android:text=') >= 0:
         if tempStrSS == '':
