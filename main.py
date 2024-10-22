@@ -21,7 +21,7 @@ def print_hi(name):
 # path = r'G:\work\petshop202406\agentgj\src\main\res\layout\activity_main.xml'
 # path = r'G:\work\petshop202406\centre\src\main\res\layout\activity_meetingexpense_info.xml'
 # path = 'G:\\work\\petshop\\agent\\src\\main\\res\\layout\\layout_product_coding_dispose.xml'
-path = r'G:\work\petshop202406\centre\src\main\res\layout\item_technical_support_application_list.xml'
+path = r'G:\work\petshop202406\centre\src\main\res\layout\layout_to_be_developed_customer_report.xml'
 tempStr = ''
 # with open(path, 'rb') as lines:
 #     for line in lines.readline():
@@ -95,7 +95,11 @@ for line in fileinput.input(path, openhook=fileinput.hook_encoded('utf-8')):
             continue
         if temp[-3:] == 'txt':
             continue
-        print('holder.%s_red.setVisibility(View.INVISIBLE);' % temp)
+        temps = temp
+        if temp.startswith('et_'):
+            temps = 'tv_' + temp[3:]
+        print('holder.%s_red.setVisibility(View.INVISIBLE);' % temps)
+
         print('holder.%s.setBackgroundResource(R.drawable.rounded_text);' % temp)
         print('holder.%s.setFocusable(false);' % temp)
         print('holder.%s.setClickable(false);' % temp)
