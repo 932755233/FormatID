@@ -1,0 +1,410 @@
+2024-12-09 22:17:04.306  6654-6654  ScreenUtils             com.centre.workoffice                D  isMultiWindow:0,userId:0
+2024-12-09 22:17:04.307  6654-6654  ScreenUtils             com.centre.workoffice                D  hasVivoFreeformTasks:0,userId:0
+2024-12-09 22:17:04.307  6654-6654  ScreenUtils             com.centre.workoffice                D  isLittleVExist:0,userId:0
+2024-12-09 22:17:04.308  6654-6654  ScreenUtils             com.centre.workoffice                D  isMultiWindow:0,userId:0
+2024-12-09 22:17:04.308  6654-6654  ScreenUtils             com.centre.workoffice                D  hasVivoFreeformTasks:0,userId:0
+2024-12-09 22:17:04.308  6654-6654  ScreenUtils             com.centre.workoffice                D  isLittleVExist:0,userId:0
+2024-12-09 22:17:04.310  6654-6654  ScreenUtils             com.centre.workoffice                D  isMultiWindow:0,userId:0
+2024-12-09 22:17:04.311  6654-6654  ScreenUtils             com.centre.workoffice                D  hasVivoFreeformTasks:0,userId:0
+2024-12-09 22:17:04.311  6654-6654  ScreenUtils             com.centre.workoffice                D  isLittleVExist:0,userId:0
+2024-12-09 22:17:04.460  6654-22139 ActivityThread          com.centre.workoffice                V  updateVmProcessStateForGc sceneId =1 state=197376
+2024-12-09 22:17:04.460  6654-22139 ntre.workoffice         com.centre.workoffice                I  Open vivo delay for GC JIT .
+2024-12-09 22:17:04.462  6654-6654  ScreenUtils             com.centre.workoffice                D  isMultiWindow:0,userId:0
+2024-12-09 22:17:04.462  6654-6654  ScreenUtils             com.centre.workoffice                D  hasVivoFreeformTasks:0,userId:0
+2024-12-09 22:17:04.462  6654-6654  ScreenUtils             com.centre.workoffice                D  isLittleVExist:0,userId:0
+2024-12-09 22:17:04.493  6654-22175 SQLiteLog               com.centre.workoffice                W  (28) double-quoted string literal: "
+2024-12-09 22:17:04.493  6654-22175 SQLiteLog               com.centre.workoffice                W  (28) double-quoted string literal: "79FA382F53CCE78F31CE1497986259E2"
+2024-12-09 22:17:04.519  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.519  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.519  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.519  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ BaseActivity.onCreate  (BaseActivity.java:80)
+2024-12-09 22:17:04.519  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.520  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.520  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity
+2024-12-09 22:17:04.520  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.557  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.557  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.557  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.557  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.557  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.557  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.557  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'AUTH_EXPENSE_REIMBURSEMENT_NEW',title:'费用报销单新增',routerUrl:''},
+2024-12-09 22:17:04.557  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.557  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.557  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.557  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.557  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.557  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.557  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.557  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'AUTH_EXPENSE_REIMBURSEMENT_LIST',title:'费用报销单维护',routerUrl:''},
+2024-12-09 22:17:04.557  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.557  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.557  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.557  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.557  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.557  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.557  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.557  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'AUTH_FEXPENSE_REIMBURSEMENT_NEW',title:'F费用报销单新增',routerUrl:''},
+2024-12-09 22:17:04.557  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'AUTH_FEXPENSE_REIMBURSEMENT_LIST',title:'F费用报销单维护',routerUrl:''},
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'AUTH_LOAN_BILL_NEW',title:'借款单新增',routerUrl:''},
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'AUTH_LOAN_BILL_LIST',title:'借款单维护',routerUrl:''},
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.558  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_APPLY_FOR_BUSINESS_TRIP_NEW',title:'出差申请单新增',routerUrl:''},
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_APPLY_FOR_BUSINESS_LIST',title:'出差申请单维护',routerUrl:''},
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_TRAVEL_EXPENSES_TRIP_NEW',title:'差旅费报销单新增',routerUrl:''},
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_TRAVEL_EXPENSES_LIST',title:'差旅费报销单维护',routerUrl:''},
+2024-12-09 22:17:04.559  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.560  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.560  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.560  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.560  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.560  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.560  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.560  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'AUTH_SECONDFREIGHT_NEW',title:'二次运费新增',routerUrl:''},
+2024-12-09 22:17:04.560  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.560  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.560  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.560  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.560  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.560  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.560  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.560  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'AUTH_SECONDFREIGHT_LIST',title:'二次运费维护',routerUrl:''},
+2024-12-09 22:17:04.560  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.560  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.560  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.560  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.560  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.560  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.560  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.560  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'AUTH_RECEIVABLEBALANCE_NEW',title:'业绩平衡新增',routerUrl:''},
+2024-12-09 22:17:04.560  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.560  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'AUTH_RECEIVABLEBALANCE_LIST',title:'业绩平衡维护',routerUrl:''},
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'AUTH_RESULTSSHARERECORD_NEW',title:'业绩分摊新增',routerUrl:''},
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'AUTH_RESULTSSHARERECORD_LIST',title:'业绩分摊维护',routerUrl:''},
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.561  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'AUTH_CONFIRM_PAY_COLL_BILL_NEW',title:'回款确认单新增',routerUrl:''},
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'AUTH_CONFIRM_PAY_COLL_BILL_LIST',title:'回款确认单维护',routerUrl:''},
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_GIFT_REQUEST_BILL_NEW',title:'礼品采购申请单新增',routerUrl:''},
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_GIFT_REQUEST_BILL_LIST',title:'礼品采购申请单维护',routerUrl:''},
+2024-12-09 22:17:04.562  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_MEETING_REQUEST_BILL_NEW',title:'会议申请单新增',routerUrl:''},
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_MEETING_REQUEST_BILL_LIST',title:'会议申请单维护',routerUrl:''},
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_MEETING_EXPENSE_BILL_NEW',title:'会议结算单新增',routerUrl:''},
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.563  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.564  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.564  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.564  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.564  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_MEETING_EXPENSE_BILL_LIST',title:'会议结算单维护',routerUrl:''},
+2024-12-09 22:17:04.564  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.564  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.564  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.564  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.564  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.564  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.564  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.564  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_VISIT_REQUEST_BILL_NEW',title:'参观公司申请单新增',routerUrl:''},
+2024-12-09 22:17:04.564  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.564  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.564  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.564  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.564  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.564  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.564  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.564  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_VISIT_REQUEST_BILL_LIST',title:'参观公司申请单维护',routerUrl:''},
+2024-12-09 22:17:04.564  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.564  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.564  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.564  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.564  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.564  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_VISIT_EXPENSE_BILL_NEW',title:'参观公司结算单新增',routerUrl:''},
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_VISIT_EXPENSE_BILL_LIST',title:'参观公司结算单维护',routerUrl:''},
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_PROMOTIONREQ_BILL_NEW',title:'促销申请单新增',routerUrl:''},
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_PROMOTIONREQ_BILL_LIST',title:'促销申请单维护',routerUrl:''},
+2024-12-09 22:17:04.565  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_PROMOTIONRECORD_BILL_NEW',title:'促销兑现备案单新增',routerUrl:''},
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_PROMOTIONRECORD_BILL_LIST',title:'促销兑现备案单维护',routerUrl:''},
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_REGULARMEETING_BILL_NEW',title:'例会申请单新增',routerUrl:''},
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.566  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.567  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.567  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.567  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.567  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_REGULARMEETING_BILL_LIST',title:'例会申请单维护',routerUrl:''},
+2024-12-09 22:17:04.567  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.567  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.567  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.567  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.567  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.567  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.567  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.567  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_DETECTIONREQ_BILL_NEW',title:'检测申请单新增',routerUrl:''},
+2024-12-09 22:17:04.567  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.567  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.567  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.567  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.567  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.567  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.567  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.567  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_DETECTIONREQ_BILL_LIST',title:'检测申请单维护',routerUrl:''},
+2024-12-09 22:17:04.567  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.567  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.567  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.567  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.567  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.568  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.568  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.568  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_P_PRODUCTION_MATERIALS_NEW',title:'非生产用料采购付款申请单新增',routerUrl:''},
+2024-12-09 22:17:04.568  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.568  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.568  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.568  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.568  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.568  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.568  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.568  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_P_PRODUCTION_MATERIALS_LIST',title:'非生产用料采购付款申请单维护',routerUrl:''},
+2024-12-09 22:17:04.568  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.568  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.568  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.568  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.568  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.568  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.568  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.568  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_METTE_PUR_REQUEST_BILL_NEW',title:'非生产用料采购申请单新增',routerUrl:''},
+2024-12-09 22:17:04.568  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.568  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.568  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.568  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.568  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.568  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.568  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.569  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_METTE_PUR_REQUEST_BILL_LIST',title:'非生产用料采购申请单维护',routerUrl:''},
+2024-12-09 22:17:04.569  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.569  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.569  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.569  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.569  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.569  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.569  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.569  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_CUSTOMER_TEMORARY_POLICY_NEW',title:'招待费申请单新增',routerUrl:''},
+2024-12-09 22:17:04.569  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.569  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.569  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.569  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.569  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.569  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.569  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.569  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_CUSTOMER_TEMORARY_POLICY_LIST',title:'招待费申请单列表',routerUrl:''},
+2024-12-09 22:17:04.569  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.569  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.569  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.569  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.569  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.569  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.569  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.569  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_FACTORY_INSPECTION_NEW',title:'验厂申请单新增',routerUrl:''},
+2024-12-09 22:17:04.569  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.570  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.570  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: main
+2024-12-09 22:17:04.570  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.570  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ CostReimburActivity.getData  (CostReimburActivity.java:361)
+2024-12-09 22:17:04.570  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.570  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.570  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  │ {permission:'PRIV_FACTORY_INSPECTION_LIST',title:'验厂申请单列表',routerUrl:''},
+2024-12-09 22:17:04.570  6654-6654  PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.573  6654-6654  AVLoadingIndicatorView  com.centre.workoffice                E  Didn't find your class , check the name again !
+2024-12-09 22:17:04.591  6654-22417 PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.591  6654-22417 PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: xTID#6
+2024-12-09 22:17:04.591  6654-22417 PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.591  6654-22417 PRETTY_LOGGER           com.centre.workoffice                D  │ HttpTask.doBackground  (HttpTask.java:301)
+2024-12-09 22:17:04.591  6654-22417 PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.591  6654-22417 PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.591  6654-22417 PRETTY_LOGGER           com.centre.workoffice                D  │ load: http://192.168.5.111:8089/getMissedRead/getCostMissedReading.do
+2024-12-09 22:17:04.591  6654-22417 PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.591  6654-22417 PRETTY_LOGGER           com.centre.workoffice                D  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.592  6654-22417 PRETTY_LOGGER           com.centre.workoffice                D  │ Thread: xTID#6
+2024-12-09 22:17:04.592  6654-22417 PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.592  6654-22417 PRETTY_LOGGER           com.centre.workoffice                D  │ HttpTask.doBackground  (HttpTask.java:302)
+2024-12-09 22:17:04.592  6654-22417 PRETTY_LOGGER           com.centre.workoffice                D  │    LogUtil.d  (LogUtil.java:68)
+2024-12-09 22:17:04.592  6654-22417 PRETTY_LOGGER           com.centre.workoffice                D  ├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+2024-12-09 22:17:04.592  6654-22417 PRETTY_LOGGER           com.centre.workoffice                D  │ load: http://192.168.5.111:8089/getMissedRead/getCostMissedReading.do?<fType=COST&appId=LTE2MYW5kcm9pZG9hMjAxNjEwMzkzNA&ukey=MTQwMjM5Mj12NDk1DAwMTY1Nzc0AAABk3G17To=>
+2024-12-09 22:17:04.592  6654-22417 PRETTY_LOGGER           com.centre.workoffice                D  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2024-12-09 22:17:04.593  6654-6654  crashsdk                com.centre.workoffice                I  Unexp log not enabled, skip update unexp info!
+2024-12-09 22:17:04.608  6654-22175 SQLiteLog               com.centre.workoffice                W  (28) double-quoted string literal: "79FA382F53CCE78F31CE1497986259E2"
+2024-12-09 22:17:04.608  6654-22175 SQLiteLog               com.centre.workoffice                W  (28) double-quoted string literal: ""
+2024-12-09 22:17:04.608  6654-22175 SQLiteLog               com.centre.workoffice                W  (28) double-quoted string literal: "79FA382F53CCE78F31CE1497986259E2"
+2024-12-09 22:17:04.608  6654-22175 SQLiteLog               com.centre.workoffice                W  (28) double-quoted string literal: "-1"
+2024-12-09 22:17:04.617  6654-6654  libc                    com.centre.workoffice                W  Access denied finding property "vendor.display.enable_optimal_refresh_rate"
+2024-12-09 22:17:04.613  6654-6654  ntre.workoffice         com.centre.workoffice                W  type=1400 audit(0.0:15996390): avc:  denied  { read } for  name="u:object_r:vendor_display_prop:s0" dev="tmpfs" ino=13660 scontext=u:r:untrusted_app:s0:c11,c256,c512,c768 tcontext=u:object_r:vendor_display_prop:s0 tclass=file permissive=0 app=com.centre.workoffice
+2024-12-09 22:17:04.619  6654-22313 OpenGLRenderer          com.centre.workoffice                E  Unable to match the desired swap behavior.
+2024-12-09 22:17:04.674  6654-6654  libc                    com.centre.workoffice                W  Access denied finding property "vendor.display.enable_optimal_refresh_rate"
+2024-12-09 22:17:04.669  6654-6654  ntre.workoffice         com.centre.workoffice                W  type=1400 audit(0.0:15996391): avc:  denied  { read } for  name="u:object_r:vendor_display_prop:s0" dev="tmpfs" ino=13660 scontext=u:r:untrusted_app:s0:c11,c256,c512,c768 tcontext=u:object_r:vendor_display_prop:s0 tclass=file permissive=0 app=com.centre.workoffice
+2024-12-09 22:17:04.675  6654-22313 OpenGLRenderer          com.centre.workoffice                E  Unable to match the desired swap behavior.
+2024-12-09 22:17:04.915  6654-6654  WindowOnBackDispatcher  com.centre.workoffice                W  sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda19@4081e34
+2024-12-09 22:17:04.932  6654-22420 BLASTBufferQueue        com.centre.workoffice                E  [VRI[CostReimburActivity]#5](f:0,a:1) Applying pending transactions on dtor 1
+2024-12-09 22:17:05.014  6654-6654  ImeFocusController      com.centre.workoffice                V  onWindowFocus: DecorView@126fd7a[CostReimburActivity] softInputMode=STATE_HIDDEN|ADJUST_PAN|IS_FORWARD_NAVIGATION
+2024-12-09 22:17:05.283  6654-22313 OpenGLRenderer          com.centre.workoffice                D  endAllActiveAnimators on 0xb4000072b33046c0 (RippleDrawable) with handle 0xb400007163054bb0
+2024-12-09 22:17:05.662  6654-22138 ActivityThread          com.centre.workoffice                V  updateVmProcessStateForGc sceneId =1 state=196608
+2024-12-09 22:17:05.662  6654-22138 ntre.workoffice         com.centre.workoffice                I  Close vivo delay for GC JIT .
